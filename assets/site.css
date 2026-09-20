@@ -138,12 +138,19 @@ section { margin-block: var(--section); }
 .hero h1 { margin-bottom: .35em; }
 .hero .lead { margin-bottom: 1.75rem; max-width: 34rem; }
 .hero-icon { border-radius: 14px; display: block; margin-bottom: 1.25rem; }
+/* The App Store frames carry a baked-in marketing headline across their top
+   quarter. It duplicates our own H1 and makes the page read as an advert, so
+   the visible box is the lower 2024 of 2778 source rows. This is presentation
+   only — no text node is hidden, and alt text is unaffected. */
 .hero-shot {
     width: 100%;
     height: auto;
-    max-width: 320px;
+    max-width: 340px;
     margin-inline: auto;
     display: block;
+    aspect-ratio: 1284 / 2024;
+    object-fit: cover;
+    object-position: center bottom;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
@@ -212,6 +219,9 @@ section { margin-block: var(--section); }
     width: 100%;
     height: auto;
     display: block;
+    aspect-ratio: 1284 / 2024;
+    object-fit: cover;
+    object-position: center bottom;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
@@ -270,13 +280,14 @@ tbody tr:last-child td { border-bottom: none; }
 
 /* ---------------------------------------------------------------- notes */
 
-.note {
+/* `.summary` is the same component under the name the privacy policy already uses. */
+.note, .summary {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: clamp(1.125rem, 3vw, 1.5rem);
 }
-.note p { font-size: 1rem; }
+.note p, .summary p { font-size: 1rem; }
 
 .callout {
     border-left: 3px solid var(--accent);
