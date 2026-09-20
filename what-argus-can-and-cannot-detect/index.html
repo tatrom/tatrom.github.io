@@ -42,7 +42,7 @@
           "name": "Can a phone app detect a hidden camera behind a mirror?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not reliably, and no app can see through glass. Argus has no separate mirror mode; the camera finder is the tool. Turn the lights off, switch on the torch and move the phone across the glass at a shallow angle: a lens behind two-way glass throws back a tight bright dot that does not move with the ordinary reflections. Then do the fingernail test — on an ordinary mirror there is a visible gap between your fingertip and its reflection, on two-way glass there is none — and check whether the mirror is set flush into the wall rather than hung on it."
+            "text": "Not reliably, and no app can see through glass. Argus has no separate mirror mode; the camera finder is the tool. Turn the lights off, switch on the torch and move the phone across the glass at a shallow angle: a lens behind two-way glass throws back a tight bright dot that does not move with the ordinary reflections. Treat the fingernail test with care: it shows which side of the glass the reflective coating is on, not whether anyone is behind it. A glass two-way mirror has to be fitted coating-forward, so no gap between fingertip and reflection is a reason to look harder — but an acrylic two-way mirror reflects from either side and can be fitted so it leaves a gap just like an ordinary mirror, so a gap rules nothing out. Check whether the mirror is set flush into the wall rather than hung on it, and remember that a two-way mirror is not itself a camera."
           }
         },
         {
@@ -107,9 +107,11 @@
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/><path d="M1.5 9a15 15 0 0 1 21 0"/></svg>
             <h2>Wi-Fi scanner</h2>
-            <p class="finds"><strong>Finds:</strong> devices on the network you joined that answer a scan, how fast each
-                answered, and which of the known camera and DVR ports are open — an open RTSP port is near-direct
-                evidence of a video feed.</p>
+            <p class="finds"><strong>Finds:</strong> devices on the network you joined that answer a scan, how
+                fast each answered, and which of the known camera and DVR ports are open. An open port commonly
+                used by RTSP can indicate a streaming service; it does not confirm that the device is a camera.
+                When a port answers, Argus asks it what it is and shows the reply, which often names the
+                firmware and identifies the software far better than the port number alone.</p>
             <p class="finds"><strong>Misses:</strong> a device that does not answer a ping, cameras on a separate or
                 isolated network — common on hotel guest Wi-Fi, which hides guests from each other — cameras with
                 their own cellular connection, cameras that record to a memory card, and anything wired to a
@@ -117,9 +119,10 @@
                 network onwards, so on a first visit that column stays silent.</p>
             <p class="finds"><strong>False positives:</strong> smart TVs, printers, thermostats, speakers and the
                 host's own phone are all "unknown devices" until you identify them.</p>
-            <p class="meta">On iOS the Wi-Fi scan needs the Local Network permission, and reading the network's name
-                additionally needs Location with Precise Location enabled — that is an iOS rule. Argus never stores
-                or transmits your location.</p>
+            <p class="meta">On iOS the Wi-Fi scan needs the Local Network permission, and reading the network’s
+                name additionally needs Location with Precise Location enabled — that is an iOS rule, and the
+                name is all it is used for. Bluetooth scanning on iOS does not involve Location. Argus never
+                asks iOS for your coordinates.</p>
         </article>
 
         <article class="card">
@@ -189,11 +192,14 @@
         <h2>A camera behind a mirror</h2>
         <p>Argus has no separate mirror mode; the camera finder is the tool. Turn the lights off, put the torch
             on and move the phone across the glass at a shallow angle while watching the screen: a lens behind
-            two-way glass throws back a tight bright dot that does not move with the ordinary reflections. Then
-            do the fingernail test — on an ordinary mirror there is a visible gap between your fingertip and its
-            reflection, on two-way glass there is none — and check whether the mirror is set flush into the wall
-            rather than hung on it. Run the Bluetooth and magnet scanners over the frame as well. No app can see
-            through glass; this procedure only tells you where to look.</p>
+            two-way glass throws back a tight bright dot that does not move with the ordinary reflections. Treat
+            the fingernail test with care: it shows which side of the glass the reflective coating is on, not
+            whether anyone is behind it. A glass two-way mirror has to be fitted coating-forward, so no gap
+            between fingertip and reflection is a reason to look harder — but an acrylic two-way mirror reflects
+            from either side and can be fitted so it leaves a gap just like an ordinary mirror, so a gap rules
+            nothing out. Check whether the mirror is set flush into the wall rather than hung on it, and
+            remember that a two-way mirror is not itself a camera. Run the Bluetooth and magnet scanners over
+            the frame as well. No app can see through glass; this procedure only tells you where to look.</p>
 
         <h2>Smoke detectors, clocks and chargers</h2>
         <p>A real smoke detector has a test button and a vent grille; what you are looking for is a small dark
@@ -204,10 +210,8 @@
         <div class="callout">
             <p>No app can guarantee that every hidden device will be found. Argus is a set of tools to help you
                 check your surroundings and make informed decisions — it is not a substitute for professional
-                detection equipment, and a phone cannot perform a true radio-frequency sweep. Independent research
-                on consumer detection tools has repeatedly found that people miss a large share of hidden devices
-                even when using dedicated hardware, so treat any result from any app, including this one, as a
-                starting point for a physical check.</p>
+                detection equipment, and a phone cannot perform a true radio-frequency sweep. Treat any result
+                from any app, including this one, as a starting point for a physical check, not as proof.</p>
         </div>
 
         <h2>Why four scanners</h2>
@@ -223,12 +227,16 @@
 
         <div>
             <h3>Can a phone app detect a hidden camera behind a mirror?</h3>
-            <p>Not reliably, and no app can see through glass. Argus has no separate mirror mode; the camera finder
-                is the tool. Turn the lights off, switch on the torch and move the phone across the glass at a
-                shallow angle: a lens behind two-way glass throws back a tight bright dot that does not move with
-                the ordinary reflections. Then do the fingernail test — on an ordinary mirror there is a visible gap
-                between your fingertip and its reflection, on two-way glass there is none — and check whether the
-                mirror is set flush into the wall rather than hung on it.</p>
+            <p>Not reliably, and no app can see through glass. Argus has no separate mirror mode; the camera
+                finder is the tool. Turn the lights off, switch on the torch and move the phone across the glass
+                at a shallow angle: a lens behind two-way glass throws back a tight bright dot that does not
+                move with the ordinary reflections. Treat the fingernail test with care: it shows which side of
+                the glass the reflective coating is on, not whether anyone is behind it. A glass two-way mirror
+                has to be fitted coating-forward, so no gap between fingertip and reflection is a reason to look
+                harder — but an acrylic two-way mirror reflects from either side and can be fitted so it leaves
+                a gap just like an ordinary mirror, so a gap rules nothing out. Check whether the mirror is set
+                flush into the wall rather than hung on it, and remember that a two-way mirror is not itself a
+                camera.</p>
         </div>
 
         <div>

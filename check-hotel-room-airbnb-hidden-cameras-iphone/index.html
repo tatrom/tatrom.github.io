@@ -34,7 +34,7 @@
         {
           "@type": "HowToStep",
           "name": "Join the room's Wi-Fi and run the Wi-Fi scanner",
-          "text": "Argus lists the devices on the network you joined that answer a scan, how fast each answered, and which of the known camera and DVR ports are open — an open RTSP port is near-direct evidence of a video feed. Look for anything you cannot account for. On a network you are scanning for the first time Argus cannot tell you whether an address is new, because it has nothing to compare against. In many hotels the guest Wi-Fi isolates devices from each other, so an empty result does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to the next three scanners."
+          "text": "Argus lists the devices on the network you joined that answer a scan, how fast each answered, and which of the known camera and DVR ports are open. An open port commonly used by RTSP can indicate a streaming service; it does not confirm that the device is a camera. When a port answers, Argus asks it what it is and shows the reply, which often names the firmware and identifies the software far better than the port number alone. Look for anything you cannot account for. On a network you are scanning for the first time Argus cannot tell you whether an address is new, because it has nothing to compare against. In many hotels the guest Wi-Fi isolates devices from each other, so an empty result does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to the next three scanners."
         },
         {
           "@type": "HowToStep",
@@ -77,7 +77,7 @@
           "name": "Do I need an account to use Argus?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. There is no account to create and no Argus server; scans are processed and stored on your iPhone."
+            "text": "No. There is no account to create and no Argus server. Camera frames and magnetometer readings are analysed on the phone as they arrive and are never recorded or saved; Wi-Fi and Bluetooth scan results are kept in the app’s local storage on your iPhone, where you can delete them, and are never uploaded."
           }
         },
         {
@@ -101,7 +101,7 @@
           "name": "Is Argus free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Argus is free to download. Argus Pro unlocks all four scanners without limits, the full list of devices found in a scan, and manufacturer and signal details; it is an auto-renewable weekly or yearly subscription and the price is shown in the app before you subscribe."
+            "text": "Yes. The Camera Finder — the infrared and lens-reflection scanner most people mean by a hidden camera detector — is free to use in full: no scan limit, no account, no ads. The Wi-Fi and Bluetooth scanners run for free too and tell you how many devices answered and whether any were grouped as suspicious. Naming those devices, their per-device detail and the Magnet Scanner are what Argus Pro adds, as an auto-renewable weekly or yearly subscription whose price is shown in the app before you subscribe."
           }
         }
       ]
@@ -170,16 +170,16 @@
     <div class="prose">
         <h2>The five-minute sweep, step by step</h2>
         <ol class="steps">
-            <li>
-                <h3>Step 1 — Join the room's Wi-Fi and run the Wi-Fi scanner</h3>
-                <p>Argus lists the devices on the network you joined that answer a scan, how fast each answered,
-                    and which of the known camera and DVR ports are open — an open RTSP port is near-direct evidence
-                    of a video feed. Look for anything you cannot account for. On a network you are scanning for the
-                    first time Argus cannot tell you whether an address is new, because it has nothing to compare
-                    against. And in many hotels the guest Wi-Fi isolates devices from each other, so an empty result
-                    does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to the
-                    next three scanners.</p>
-            </li>
+            <li><h3>Step 1 — Join the room's Wi-Fi and run the Wi-Fi scanner</h3> <p>Argus lists the devices on
+                the network you joined that answer a scan, how fast each answered, and which of the known camera
+                and DVR ports are open. An open port commonly used by RTSP can indicate a streaming service; it
+                does not confirm that the device is a camera. When a port answers, Argus asks it what it is and
+                shows the reply, which often names the firmware and identifies the software far better than the
+                port number alone. Look for anything you cannot account for. On a network you are scanning for
+                the first time Argus cannot tell you whether an address is new, because it has nothing to
+                compare against. And in many hotels the guest Wi-Fi isolates devices from each other, so an
+                empty result does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you
+                move on to the next three scanners.</p></li>
             <li>
                 <h3>Step 2 — Run the Bluetooth scanner from the bed and again from the bathroom</h3>
                 <p>Argus lists the Bluetooth Low Energy devices advertising nearby during a ten-second scan, with
@@ -277,7 +277,10 @@
 
         <div>
             <h3>Do I need an account to use Argus?</h3>
-            <p>No. There is no account to create and no Argus server; scans are processed and stored on your iPhone.</p>
+            <p>No. There is no account to create and no Argus server. Camera frames and magnetometer readings
+                are analysed on the phone as they arrive and are never recorded or saved; Wi-Fi and Bluetooth
+                scan results are kept in the app’s local storage on your iPhone, where you can delete them, and
+                are never uploaded.</p>
         </div>
 
         <div>
@@ -292,9 +295,12 @@
 
         <div>
             <h3>Is Argus free?</h3>
-            <p>Argus is free to download. Argus Pro unlocks all four scanners without limits, the full list of
-                devices found in a scan, and manufacturer and signal details; it is an auto-renewable weekly or
-                yearly subscription and the price is shown in the app before you subscribe.</p>
+            <p>Yes. The Camera Finder — the infrared and lens-reflection scanner most people mean by a hidden
+                camera detector — is free to use in full: no scan limit, no account, no ads. The Wi-Fi and
+                Bluetooth scanners run for free too and tell you how many devices answered and whether any were
+                grouped as suspicious. Naming those devices, their per-device detail and the Magnet Scanner are
+                what Argus Pro adds, as an auto-renewable weekly or yearly subscription whose price is shown in
+                the app before you subscribe.</p>
         </div>
     </div>
 </section>

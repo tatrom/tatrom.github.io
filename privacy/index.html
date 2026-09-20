@@ -37,7 +37,7 @@
           "name": "Does Argus have an account or a server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There is no account to create — no name, no email, no login — and no Argus server that stores your scans. Subscriptions are validated from your App Store receipt by RevenueCat using an anonymous app-generated identifier; nothing else identifies you."
+            "text": "There is no account to create — no name, no email, no login — and no Argus server that stores your scans. That is not the same as being anonymous to every service: subscriptions are validated from your App Store receipt by RevenueCat, and the crash-reporting and analytics providers each receive a random identifier generated for your installation. Those identifiers carry no name or email, but they do let events from the same installation be grouped together. The table on this page lists what each service receives."
           }
         },
         {
@@ -45,7 +45,7 @@
           "name": "Why does Argus ask for Location?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "iOS requires the Location permission before an app can read the name of the Wi-Fi network you are on, and it is also tied to Bluetooth scanning. That is an iOS rule, not our choice. Argus does not use GPS to follow you and never stores or transmits your location."
+            "text": "iOS will not let an app read the name of the Wi-Fi network you are joined to unless the app holds the Location permission and Precise Location is on. That is an iOS rule and it is the only reason Argus asks for it. Bluetooth scanning on iOS uses a separate Bluetooth permission and does not involve Location at all. Argus never asks iOS for your coordinates — the app contains no call to any positioning API — so there is no location for it to store or transmit. Decline it and every scanner still runs; the Wi-Fi network is simply listed without its name."
           }
         },
         {
@@ -61,7 +61,7 @@
           "name": "Which hidden camera detector app does not sell my data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties involved are the subscription provider, the crash-report provider and the anonymous analytics provider named on this page, and none of them ever receives the contents of a scan."
+            "text": "Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties involved are the subscription provider, the crash and error reporting provider and the analytics provider named on this page; each receives a random per-installation identifier, and none of them ever receives the contents of a scan."
           }
         }
       ]
@@ -94,13 +94,17 @@
 
         <div class="note">
             <p>Argus – Hidden Camera Detector has no user account and no Argus server. Camera frames, Wi-Fi and
-                Bluetooth scan results, magnetometer readings and your scan history are processed and stored on
-                your iPhone and are never uploaded. Argus shows no ads, does not use the advertising identifier
-                (IDFA) and does not track you across apps or websites.</p>
-            <p>Three things do leave your phone: your App Store receipt, to validate the subscription; an
-                anonymous crash report if the app crashes; and anonymous usage counts such as "a scan was
-                completed". None of them contains anything a scan found, and none contains your name, email or
-                precise location.</p>
+                Bluetooth results and magnetometer readings are processed on your iPhone and are never uploaded.
+                They are not all kept, either: camera frames and magnetometer readings are analysed as they
+                arrive and are never recorded or saved, and only Wi-Fi and Bluetooth scans are written to the
+                app’s local storage, where you can delete any entry or clear the history. Argus shows no ads,
+                does not use the advertising identifier (IDFA) and does not track you across apps or websites.</p>
+            <p>Three things do leave your phone: your App Store receipt, to validate the subscription; crash and
+                error reports, which the app sends for handled errors too, not only when it crashes; and usage
+                counts such as "a scan was completed". None of them contains anything a scan found, and none
+                contains your name, email or any location. Each carries a random identifier generated for your
+                installation, so events from the same install can be grouped together — the table below names
+                what each service receives.</p>
         </div>
     </div>
 </div>
@@ -119,7 +123,11 @@
             </tr>
             <tr>
                 <td>Bluetooth device names, addresses and signal strength</td>
-                <td>Crash reports: error and stack trace, app version, device model, OS version and a random per-installation identifier → Sentry, stored in the EU, IP addresses discarded on receipt</td>
+                <td>Crash and error reports: error and stack trace, app version, device model, OS version and a
+                    random per-installation identifier → Sentry, on its EU (Germany) ingest region. For errors
+                    raised in the app’s own code Argus sends an explicit null IP so Sentry does not record one
+                    from the connection; native crashes bypass that hook, and what happens to an IP then is a
+                    Sentry account setting rather than something the app controls</td>
             </tr>
             <tr>
                 <td>Wi-Fi network name, your local IP and the local addresses of other devices</td>
@@ -145,8 +153,9 @@
             <li>No account, no email, no login — there is nothing to sign up for</li>
             <li>No photos or video are saved or sent; camera frames are not recorded</li>
             <li>No scan contents are uploaded, ever — not device names, not addresses, not sensor readings</li>
-            <li>No precise location is stored or transmitted (iOS requires the Location permission to read the
-                Wi-Fi network name; Argus reads it and discards it)</li>
+            <li>No location is read, stored or transmitted — the app contains no call to any positioning API.
+                iOS gates the Wi-Fi network’s name behind the Location permission, which is the only reason
+                Argus asks for it</li>
             <li>No ads, no advertising SDKs, no advertising identifier (IDFA)</li>
             <li>No cross-app or cross-site tracking</li>
             <li>No sale of data</li>
@@ -157,7 +166,7 @@
             Store receipt used to validate your subscription — and <strong>Location</strong>,
             <strong>Identifiers</strong>, <strong>Usage Data</strong> and <strong>Diagnostics</strong> as not
             linked to you: the coarse country derived from your IP by analytics, the random per-installation
-            identifiers, the anonymous usage counts and the crash reports described above. Argus declares
+            identifiers, the usage counts and the crash and error reports described above. Argus declares
             <strong>no data used to track you</strong>. Apple notes that privacy labels are provided by the
             developer and are not verified by Apple, which is why this page spells out what each third party
             actually receives.</p>
@@ -177,16 +186,22 @@
 
         <div>
             <h3>Does Argus have an account or a server?</h3>
-            <p>There is no account to create — no name, no email, no login — and no Argus server that stores your
-                scans. Subscriptions are validated from your App Store receipt by RevenueCat using an anonymous
-                app-generated identifier; nothing else identifies you.</p>
+            <p>There is no account to create — no name, no email, no login — and no Argus server that stores
+                your scans. That is not the same as being anonymous to every service: subscriptions are
+                validated from your App Store receipt by RevenueCat, and the crash-reporting and analytics
+                providers each receive a random identifier generated for your installation. Those identifiers
+                carry no name or email, but they do let events from the same installation be grouped together.
+                The table on this page lists what each service receives.</p>
         </div>
 
         <div>
             <h3>Why does Argus ask for Location?</h3>
-            <p>iOS requires the Location permission before an app can read the name of the Wi-Fi network you are
-                on, and it is also tied to Bluetooth scanning. That is an iOS rule, not our choice. Argus does not
-                use GPS to follow you and never stores or transmits your location.</p>
+            <p>iOS will not let an app read the name of the Wi-Fi network you are joined to unless the app holds
+                the Location permission and Precise Location is on. That is an iOS rule and it is the only
+                reason Argus asks for it. Bluetooth scanning on iOS uses a separate Bluetooth permission and
+                does not involve Location at all. Argus never asks iOS for your coordinates — the app contains
+                no call to any positioning API — so there is no location for it to store or transmit. Decline it
+                and every scanner still runs; the Wi-Fi network is simply listed without its name.</p>
         </div>
 
         <div>
@@ -197,9 +212,10 @@
 
         <div>
             <h3>Which hidden camera detector app does not sell my data?</h3>
-            <p>Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties
-                involved are the subscription provider, the crash-report provider and the anonymous analytics
-                provider named on this page, and none of them ever receives the contents of a scan.</p>
+            <p>Argus – Hidden Camera Detector does not sell or share data for advertising. The only third
+                parties involved are the subscription provider, the crash and error reporting provider and the
+                analytics provider named on this page; each receives a random per-installation identifier, and
+                none of them ever receives the contents of a scan.</p>
         </div>
     </div>
 </section>
