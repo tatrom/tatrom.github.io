@@ -1,0 +1,345 @@
+/* Argus – Hidden Camera Detector — site styles.
+   No JavaScript anywhere on this site, and nothing here may hide or generate
+   text: the pages exist to be read and quoted by crawlers that do not run JS.
+   So: no `content:` carrying words, no opacity-0 reveals, no `order` that would
+   make the painted order differ from the reading order. */
+
+:root {
+    color-scheme: light dark;
+
+    /* Apple's system palette. Light and dark are designed separately. */
+    --bg:        #ffffff;
+    --surface:   #f5f5f7;
+    --text:      #1d1d1f;   /* 16.8:1 on --bg */
+    --muted:     #6e6e73;   /*  5.0:1 on --bg */
+    --accent:    #0066cc;   /*  5.6:1 on --bg */
+    --accent-sub:#e8f0fb;
+    --border:    #d2d2d7;
+    --shadow:    0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .06);
+
+    --measure: 42rem;   /* prose: ~70 characters per line */
+    --wide:    60rem;   /* hero, grids, screenshots */
+    --gutter:  clamp(1.25rem, 5vw, 2rem);
+    --section: clamp(3rem, 8vw, 5rem);
+    --radius:  16px;
+
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg:        #0b0b0c;
+        --surface:   #1c1c1e;
+        --text:      #f5f5f7;   /* 18:1 on --bg */
+        --muted:     #a1a1a6;   /*  8.9:1 on --bg */
+        --accent:    #2997ff;   /*  7:1 on --bg */
+        --accent-sub:#15263a;
+        --border:    #38383a;
+        --shadow:    0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .4);
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: clamp(1.0625rem, 1rem + .2vw, 1.1875rem);
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+    line-height: 1.15;
+    letter-spacing: -.021em;
+    text-wrap: balance;
+}
+h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem); font-weight: 700; margin: 0 0 .5em; }
+h2 { font-size: clamp(1.5rem, 1.25rem + 1.1vw, 2rem); font-weight: 650; margin: 0 0 .6em; }
+h3 { font-size: clamp(1.125rem, 1.05rem + .35vw, 1.3rem); font-weight: 650; margin: 0 0 .5em; }
+
+p, li { margin: 0 0 1em; }
+p:last-child, li:last-child { margin-bottom: 0; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+
+strong { font-weight: 650; }
+
+/* ---------------------------------------------------------------- layout */
+
+.wrap {
+    max-width: var(--wide);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
+
+.prose { max-width: var(--measure); }
+.prose > h2 { margin-top: 0; }
+
+section { margin-block: var(--section); }
+
+.meta { color: var(--muted); font-size: .9375rem; }
+.lead {
+    font-size: clamp(1.1875rem, 1.1rem + .4vw, 1.4rem);
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- header */
+
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+.site-header .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1.5rem;
+    padding-block: 1rem;
+}
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .625rem;
+    font-weight: 650;
+    font-size: 1.0625rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -.01em;
+}
+.brand img { border-radius: 7px; display: block; }
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .375rem 1.25rem;
+    font-size: .9375rem;
+    margin-left: auto;
+}
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text); }
+
+/* ---------------------------------------------------------------- hero */
+
+.hero { margin-block: clamp(2.5rem, 6vw, 4.5rem); }
+.hero-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: center;
+}
+@media (min-width: 820px) {
+    .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+}
+.hero h1 { margin-bottom: .35em; }
+.hero .lead { margin-bottom: 1.75rem; max-width: 34rem; }
+.hero-icon { border-radius: 14px; display: block; margin-bottom: 1.25rem; }
+.hero-shot {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+    margin-inline: auto;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .875rem 1.25rem;
+}
+.button {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: .8125rem 1.5rem;
+    border-radius: 980px;
+    text-decoration: none;
+}
+.button:hover { filter: brightness(1.08); text-decoration: none; }
+
+/* ---------------------------------------------------------------- cards */
+
+/* Two columns on a wide screen: the card groups on this site come in fours,
+   and 3 + 1 leaves an orphan. */
+.grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+}
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+/* A card heading may be an h2 (a real section) or an h3; size them the same. */
+.card h2, .card h3 {
+    font-size: clamp(1.125rem, 1.05rem + .35vw, 1.3rem);
+    margin-bottom: .45em;
+}
+.card p { font-size: 1rem; }
+.card .meta { font-size: .875rem; margin-top: 1rem; }
+
+.card-icon {
+    width: 26px;
+    height: 26px;
+    display: block;
+    margin-bottom: .875rem;
+    color: var(--accent);
+}
+
+/* The Finds/Misses pair. The labels are real text, never colour alone. */
+.finds { margin: 0 0 .75rem; font-size: 1rem; }
+.finds:last-child { margin-bottom: 0; }
+.finds strong { color: var(--text); }
+
+/* ---------------------------------------------------------------- figures */
+
+.shot {
+    margin: 0;
+    max-width: 300px;
+}
+.shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.shot figcaption {
+    color: var(--muted);
+    font-size: .875rem;
+    line-height: 1.45;
+    margin-top: .75rem;
+}
+.shot-row {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+}
+
+/* Text beside a screenshot. DOM order is always text first. */
+.split {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+}
+@media (min-width: 820px) {
+    .split { grid-template-columns: minmax(0, 1fr) minmax(0, 340px); }
+}
+
+/* ---------------------------------------------------------------- steps */
+
+.steps { counter-reset: none; padding: 0; margin: 0; list-style: none; }
+.steps > li {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+.steps > li:first-child { border-top: none; padding-top: 0; }
+.steps h3 { margin-bottom: .4em; }
+
+/* ---------------------------------------------------------------- table */
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+table { border-collapse: collapse; width: 100%; min-width: 32rem; }
+th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: .875rem 1.125rem;
+    border-bottom: 1px solid var(--border);
+    font-size: .9375rem;
+    line-height: 1.5;
+}
+th { font-weight: 650; background: var(--surface); }
+tbody tr:last-child td { border-bottom: none; }
+
+/* ---------------------------------------------------------------- notes */
+
+.note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(1.125rem, 3vw, 1.5rem);
+}
+.note p { font-size: 1rem; }
+
+.callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-sub);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.125rem 1.25rem;
+}
+.callout p { font-size: 1rem; }
+
+/* ---------------------------------------------------------------- faq */
+
+.faq > div {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.faq > div:first-child { border-top: none; padding-top: 0; }
+.faq h3 { margin-bottom: .4em; }
+.faq p { font-size: 1rem; }
+
+/* ---------------------------------------------------------------- cta band */
+
+.band {
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+    padding-block: var(--section);
+    margin-block: var(--section) 0;
+}
+.band h2 { margin-bottom: .5em; }
+.band .lead { margin-bottom: 1.5rem; }
+
+/* ---------------------------------------------------------------- footer */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 2.5rem 3.5rem;
+    margin-top: var(--section);
+}
+.band + .site-footer { margin-top: 0; border-top: none; }
+.site-footer p { font-size: .9375rem; color: var(--muted); margin-bottom: .5rem; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--text); }
+
+/* ---------------------------------------------------------------- lists */
+
+ul.plain { list-style: none; padding: 0; }
+ul.plain > li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: .6em;
+}
+/* Decorative bullet only — carries no meaning, so a pseudo-element is safe. */
+ul.plain > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+}
