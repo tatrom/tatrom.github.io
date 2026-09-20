@@ -34,12 +34,12 @@
         {
           "@type": "HowToStep",
           "name": "Join the room's Wi-Fi and run the Wi-Fi scanner",
-          "text": "Argus lists every device on the network you are connected to, with the service it runs, how fast it answered, which ports are open and whether it is new since your last scan. Look for anything you cannot account for. In many hotels the guest Wi-Fi isolates devices from each other, so an empty result does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to the next three scanners."
+          "text": "Argus lists the devices on the network you joined that answer a scan, how fast each answered, and which of the known camera and DVR ports are open — an open RTSP port is near-direct evidence of a video feed. Look for anything you cannot account for. On a network you are scanning for the first time Argus cannot tell you whether an address is new, because it has nothing to compare against. In many hotels the guest Wi-Fi isolates devices from each other, so an empty result does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to the next three scanners."
         },
         {
           "@type": "HowToStep",
           "name": "Run the Bluetooth scanner from the bed and again from the bathroom",
-          "text": "Argus lists nearby Bluetooth Low Energy devices with name, address and signal strength. A device whose signal gets stronger as you walk toward a smoke detector, a clock or a charger deserves a closer look."
+          "text": "Argus lists the Bluetooth Low Energy devices advertising nearby during a ten-second scan, with name, address and the signal strength recorded when each was first seen. Signal strength is not tracked live within a scan, so to narrow down where a device is, scan again from a second spot and compare the two lists."
         },
         {
           "@type": "HowToStep",
@@ -54,7 +54,7 @@
         {
           "@type": "HowToStep",
           "name": "Cross-check and decide",
-          "text": "One scanner hit is a maybe; two scanners pointing at the same object is a pattern. Argus keeps each sweep in a local scan history on your phone, so you can compare rooms on the same trip."
+          "text": "One scanner hit is a maybe; two scanners pointing at the same object is a pattern. Argus keeps your Wi-Fi and Bluetooth scans in a local history on your phone, so you can compare rooms on the same trip."
         }
       ]
     }
@@ -172,17 +172,20 @@
         <ol class="steps">
             <li>
                 <h3>Step 1 — Join the room's Wi-Fi and run the Wi-Fi scanner</h3>
-                <p>Argus lists every device on the network you are connected to, with the service it runs, how fast it
-                    answered, which ports are open and whether it is new since your last scan. Look for anything you
-                    cannot account for. In many hotels the guest Wi-Fi isolates devices from each other, so an empty
-                    result does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to
-                    the next three scanners.</p>
+                <p>Argus lists the devices on the network you joined that answer a scan, how fast each answered,
+                    and which of the known camera and DVR ports are open — an open RTSP port is near-direct evidence
+                    of a video feed. Look for anything you cannot account for. On a network you are scanning for the
+                    first time Argus cannot tell you whether an address is new, because it has nothing to compare
+                    against. And in many hotels the guest Wi-Fi isolates devices from each other, so an empty result
+                    does not mean the room is clean — it means the Wi-Fi scan cannot see it, and you move on to the
+                    next three scanners.</p>
             </li>
             <li>
                 <h3>Step 2 — Run the Bluetooth scanner from the bed and again from the bathroom</h3>
-                <p>Argus lists nearby Bluetooth Low Energy devices with name, address and signal strength. A device
-                    whose signal gets stronger as you walk toward a smoke detector, a clock or a charger deserves a
-                    closer look.</p>
+                <p>Argus lists the Bluetooth Low Energy devices advertising nearby during a ten-second scan, with
+                    name, address and the signal strength recorded when each was first seen. Signal strength is not
+                    tracked live within a scan, so to narrow down where a device is, scan again from a second spot
+                    and compare the two lists.</p>
             </li>
             <li>
                 <h3>Step 3 — Lights off, camera finder on</h3>
@@ -200,8 +203,9 @@
             </li>
             <li>
                 <h3>Step 5 — Cross-check and decide</h3>
-                <p>One scanner hit is a maybe; two scanners pointing at the same object is a pattern. Argus keeps each
-                    sweep in a local scan history on your phone, so you can compare rooms on the same trip.</p>
+                <p>One scanner hit is a maybe; two scanners pointing at the same object is a pattern. Argus keeps your
+                    Wi-Fi and Bluetooth scans in a local history on your phone, so you can compare rooms on the
+                    same trip.</p>
             </li>
         </ol>
     </div>

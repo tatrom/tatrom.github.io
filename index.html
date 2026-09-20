@@ -152,8 +152,8 @@
         <article class="card">
             <h3>Airbnbs and vacation rentals</h3>
             <p>In a rental the host normally runs the Wi-Fi, so the Wi-Fi scanner is your first pass: it lists
-                every device on the network with the service it runs, how fast it answered, which ports are open
-                and whether it is new since your last scan. Airbnb prohibits cameras inside a listing entirely.</p>
+                the devices that answer a scan, how fast each answered, and which of the known camera and DVR ports
+                are open. Airbnb prohibits cameras inside a listing entirely.</p>
         </article>
         <article class="card">
             <h3>Changing rooms, gyms and bathrooms</h3>
@@ -176,27 +176,30 @@
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/><path d="M1.5 9a15 15 0 0 1 21 0"/></svg>
             <h3>Wi-Fi scanner</h3>
-            <p class="finds"><strong>Finds:</strong> every device on the Wi-Fi network you are connected to, with
-                the service it runs, how fast it answered, which ports are open and whether it is new since your
-                last scan.</p>
-            <p class="finds"><strong>Misses:</strong> cameras on a separate or isolated network, cameras with their
-                own SIM card, and cameras that only record to a memory card.</p>
+            <p class="finds"><strong>Finds:</strong> devices on the network you joined that answer a scan, how fast each
+                answered, and which of the known camera and DVR ports are open — an open RTSP port is near-direct
+                evidence of a video feed.</p>
+            <p class="finds"><strong>Misses:</strong> a device that does not answer a ping, cameras on a separate or
+                isolated network, cameras with their own SIM card, and cameras that only record to a memory card.
+                Whether an address is new is only known from your second scan of the same network onwards.</p>
         </article>
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7.5 17 16.5 12 21V3l5 4.5L7 16.5"/></svg>
             <h3>Bluetooth scanner</h3>
-            <p class="finds"><strong>Finds:</strong> nearby Bluetooth Low Energy devices with name, address and
-                live signal strength, so you can spot trackers and gadgets and watch the signal rise as you
-                approach a hiding place.</p>
-            <p class="finds"><strong>Misses:</strong> anything not advertising over Bluetooth. iOS hides AirTag
-                identifiers from third-party apps, so Argus cannot name an AirTag with certainty — confirm a
-                suspected AirTag in Apple's Find My.</p>
+            <p class="finds"><strong>Finds:</strong> Bluetooth Low Energy devices advertising nearby during a
+                ten-second scan, with name, address and the signal strength recorded when each was first seen.
+                Anything fainter than −90 dBm is left out as next-room noise.</p>
+            <p class="finds"><strong>Misses:</strong> anything not advertising over Bluetooth. Signal strength is
+                captured once per device per scan, not tracked live — to narrow down where something is, run
+                separate scans from different spots and compare. iOS hides AirTag identifiers from third-party
+                apps, so Argus cannot name an AirTag with certainty — confirm one in Apple's Find My.</p>
         </article>
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-2.5h8L18 7h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
             <h3>Camera finder — infrared and lens reflection</h3>
-            <p class="finds"><strong>Finds:</strong> in a dark room, the tight bright pinpoint a lens throws back
-                when you sweep with the torch, and the glow of infrared night-vision LEDs.</p>
+            <p class="finds"><strong>Finds:</strong> in a dark room, bright pinpoint reflections and glints as you sweep
+                with the torch. It weighs how many pixels are very bright against how bright the scene is overall,
+                so a lens glint reads differently from a sunlit window. A glint is a place to look, not a camera.</p>
             <p class="finds"><strong>Misses:</strong> cameras with no infrared illumination, 940&nbsp;nm "no-glow"
                 illuminators, which phone cameras see far more faintly than 850&nbsp;nm ones, and lenses behind
                 opaque covers. It is built for dark rooms and deliberately stays quiet in bright light, because
@@ -206,7 +209,8 @@
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v8a6 6 0 0 0 12 0V4h-4v8a2 2 0 0 1-4 0V4z"/><path d="M6 8h4M14 8h4"/></svg>
             <h3>Magnet scanner</h3>
             <p class="finds"><strong>Finds:</strong> the magnetic signature of electronics concealed inside
-                everyday objects, within a few centimetres.</p>
+                everyday objects, within a few centimetres. Argus calibrates against the room's own field first,
+                then raises an alert at roughly 35 µT above that baseline.</p>
             <p class="finds"><strong>Misses / false positives:</strong> plumbing, rebar, speakers and metal
                 fittings move the needle too, and a reading can stay high after you pass a large metal object —
                 move away and start a new scan so it recalibrates. Treat a spike as a reason to look closer,
@@ -221,7 +225,7 @@
                  sizes="(min-width: 700px) 300px, 80vw"
                  width="340" height="736" loading="lazy"
                  alt="The Argus device list showing identified and unidentified devices on the network, with one unknown device at 10.1.56.33 flagged as a possible camera." />
-            <figcaption>The Wi-Fi scan lists every device on the network and flags the ones you cannot account for.</figcaption>
+            <figcaption>The Wi-Fi scan lists the devices that answered and flags open camera and DVR ports.</figcaption>
         </figure>
         <figure class="shot">
             <img src="/assets/shot-03-lenses-340.webp"
