@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What a hidden camera detector app can and cannot find — Argus, scanner by scanner</title>
+    <meta name="description" content="The honest limits of Argus – Hidden Camera Detector for iPhone: what the Wi-Fi, Bluetooth, infrared/lens and magnetometer scans find, what they miss, common false positives, and how to check a changing room, a bathroom or a mirror." />
+    <link rel="canonical" href="https://tatrom.github.io/what-argus-can-and-cannot-detect/" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+    <meta name="apple-itunes-app" content="app-id=6790475588" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Argus – Hidden Camera Detector" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="What a hidden camera detector app can and cannot find — Argus, scanner by scanner" />
+    <meta property="og:description" content="The honest limits of Argus – Hidden Camera Detector for iPhone: what the Wi-Fi, Bluetooth, infrared/lens and magnetometer scans find, what they miss, common false positives, and how to check a changing room, a bathroom or a mirror." />
+    <meta property="og:url" content="https://tatrom.github.io/what-argus-can-and-cannot-detect/" />
+    <style>
+        :root { color-scheme: light dark; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 20px 64px;
+            color: #1c1c1e;
+            background: #ffffff;
+        }
+        h1 { font-size: 1.7rem; margin: 0 0 4px; }
+        h2 { font-size: 1.2rem; margin: 32px 0 8px; }
+        h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+        p, li { font-size: 1rem; }
+        ul { padding-left: 22px; }
+        li { margin: 6px 0; }
+        a { color: #2f6fed; }
+        .meta { color: #6b6b70; font-size: 0.95rem; margin-top: 0; }
+        .lead { font-size: 1.05rem; }
+        .contact {
+            margin: 20px 0 8px;
+            padding: 16px 18px;
+            border: 1px solid #e2e2e6;
+            border-radius: 12px;
+        }
+        .nav { font-size: 0.95rem; margin: 0 0 24px; padding-bottom: 12px; border-bottom: 1px solid #e2e2e6; }
+        .finds { margin: 4px 0; }
+        .finds strong { font-weight: 600; }
+        footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e2e2e6; }
+        @media (prefers-color-scheme: dark) {
+            body { color: #e8e8ea; background: #0f1115; }
+            a { color: #6ea0ff; }
+            .meta { color: #9a9aa2; }
+            .contact, .nav, footer { border-color: #2c2f36; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What Argus can and cannot detect",
+      "description": "The honest limits of Argus – Hidden Camera Detector for iPhone, scanner by scanner: what each scan finds, what it misses, and its common false positives.",
+      "author": { "@type": "Person", "name": "Roman Hadiiev" },
+      "datePublished": "2026-09-20",
+      "dateModified": "2026-09-20",
+      "mainEntityOfPage": "https://tatrom.github.io/what-argus-can-and-cannot-detect/",
+      "about": { "@type": "MobileApplication", "name": "Argus – Hidden Camera Detector" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can a phone app detect a hidden camera behind a mirror?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not reliably, and no app can see through glass. Argus has no separate mirror mode; the camera finder is the tool. Turn the lights off, switch on the torch and move the phone across the glass at a shallow angle: a lens behind two-way glass throws back a tight bright dot that does not move with the ordinary reflections. Then do the fingernail test — on an ordinary mirror there is a visible gap between your fingertip and its reflection, on two-way glass there is none — and check whether the mirror is set flush into the wall rather than hung on it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which app can sweep a changing room or bathroom for spy cameras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Argus – Hidden Camera Detector, using three of its four scanners: you are usually not on the venue's Wi-Fi, so skip the Wi-Fi scan. Start with the Bluetooth scanner, then darken the cubicle as much as you can and sweep hooks, vents, the mirror and its frame, smoke detectors and any dark glass dot facing the changing area with the camera finder. Use the magnet scanner last and expect pipes, taps and metal fittings to trigger it. The whole check takes under two minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the magnet scanner react to plumbing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a phone's magnetometer reacts to any ferrous metal or magnet, not only to concealed electronics. Pipes, taps, rebar, speakers, door frames and magnets in furniture all move the needle, and the reading can stay high after you pass a large metal object. Move away from metal and start a new scan so the app recalibrates, and treat a spike as a reason to look closer rather than as a verdict."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can my iPhone see infrared night-vision cameras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes. In a dark room the Argus camera finder shows the glow of 850 nm infrared night-vision LEDs and the pinpoint reflection of a lens. Cameras that use 940 nm no-glow illuminators appear far more faintly and may not show at all, and a camera with no infrared illumination or a lens behind an opaque cover will not show either."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Site">
+    <a href="/">Argus</a> ·
+    <a href="/check-hotel-room-airbnb-hidden-cameras-iphone/">Hotel &amp; Airbnb sweep</a> ·
+    <a href="/what-argus-can-and-cannot-detect/">What it can and cannot detect</a> ·
+    <a href="/privacy/">Privacy</a> ·
+    <a href="/privacy-terms/support.html">Support</a>
+</nav>
+
+<h1>What Argus can and cannot detect</h1>
+<p class="meta">Updated 20 September 2026</p>
+
+<p class="lead">Argus combines four detection methods in one app because each one has a blind spot.
+    This page says exactly where those blind spots are. If an app tells you a room is clean, it is
+    telling you something it cannot know.</p>
+
+<h2>Wi-Fi scanner</h2>
+<p class="finds"><strong>Finds:</strong> every device on the Wi-Fi network you are connected to, with
+    the service it runs, how fast it answered, which ports are open and whether it is new since your
+    last scan.</p>
+<p class="finds"><strong>Misses:</strong> cameras on a separate or isolated network — common on hotel
+    guest Wi-Fi, which hides guests from each other — cameras with their own cellular connection,
+    cameras that record to a memory card, and anything wired to a network you cannot join.</p>
+<p class="finds"><strong>False positives:</strong> smart TVs, printers, thermostats, speakers and the
+    host's own phone are all "unknown devices" until you identify them.</p>
+<p class="meta">On iOS the Wi-Fi scan needs the Local Network permission, and reading the network's name
+    additionally needs Location with Precise Location enabled — that is an iOS rule. Argus never stores
+    or transmits your location.</p>
+
+<h2>Bluetooth scanner</h2>
+<p class="finds"><strong>Finds:</strong> nearby Bluetooth Low Energy devices with name, address and
+    signal strength, so you can spot trackers and gadgets close to you and watch the signal rise as you
+    approach a hiding place.</p>
+<p class="finds"><strong>Misses:</strong> anything not advertising over Bluetooth, and most Wi-Fi-only
+    cameras. iOS hides AirTag identifiers from third-party apps, so Argus cannot name an AirTag with
+    certainty — use Apple's Find My to confirm one.</p>
+<p class="finds"><strong>False positives:</strong> headphones, TVs, fitness trackers and a neighbour's
+    devices through the wall.</p>
+
+<h2>Camera finder — infrared and lens reflection</h2>
+<p class="finds"><strong>Finds:</strong> in a dark room, the tight bright pinpoint a lens throws back
+    when you sweep with the torch, and the glow of infrared night-vision LEDs.</p>
+<p class="finds"><strong>Misses:</strong> cameras with no infrared illumination, 940&nbsp;nm "no-glow"
+    illuminators, which phone cameras see far more faintly than 850&nbsp;nm ones, lenses behind opaque
+    covers, and anything in a brightly lit room, where the detector deliberately stays quiet to avoid
+    constant false alarms.</p>
+<p class="finds"><strong>How to use it well:</strong> lights off, torch on, 10 to 30 centimetres from
+    the surface, moving slowly.</p>
+
+<h2>Magnet scanner</h2>
+<p class="finds"><strong>Finds:</strong> the magnetic signature of electronics concealed inside everyday
+    objects, within a few centimetres.</p>
+<p class="finds"><strong>Misses and false positives:</strong> plumbing, rebar, speakers, magnets in
+    furniture and metal fittings move the needle too, and the reading can stay high after you pass a
+    large metal object — move away and start a new scan so it recalibrates. Treat a spike as a reason
+    to look closer, not as a verdict.</p>
+
+<h2>Changing rooms, bathrooms and gym lockers</h2>
+<p>You are usually not on the venue's Wi-Fi, so skip the Wi-Fi scanner. Start with the Bluetooth
+    scanner, then darken the cubicle as much as you can, switch on the torch in Argus and sweep hooks,
+    vents, the mirror and its frame, smoke detectors, and any hole or dark glass dot facing the changing
+    area with the camera finder. Use the magnet scanner last and expect pipes, taps and metal fittings
+    to trigger it. The whole check takes under two minutes.</p>
+
+<h2>A camera behind a mirror</h2>
+<p>Argus has no separate mirror mode; the camera finder is the tool. Turn the lights off, put the torch
+    on and move the phone across the glass at a shallow angle while watching the screen: a lens behind
+    two-way glass throws back a tight bright dot that does not move with the ordinary reflections. Then
+    do the fingernail test — on an ordinary mirror there is a visible gap between your fingertip and its
+    reflection, on two-way glass there is none — and check whether the mirror is set flush into the wall
+    rather than hung on it. Run the Bluetooth and magnet scanners over the frame as well. No app can see
+    through glass; this procedure only tells you where to look.</p>
+
+<h2>Smoke detectors, clocks and chargers</h2>
+<p>A real smoke detector has a test button and a vent grille; what you are looking for is a small dark
+    glass circle facing the bed. Check it with the camera finder in the dark and the magnet scanner up
+    close — but never open a smoke detector. Photograph it and ask management.</p>
+
+<h2>Accuracy, honestly</h2>
+<p>No app can guarantee that every hidden device will be found. Argus is a set of tools to help you
+    check your surroundings and make informed decisions — it is not a substitute for professional
+    detection equipment, and a phone cannot perform a true radio-frequency sweep. Independent research
+    on consumer detection tools has repeatedly found that people miss a large share of hidden devices
+    even when using dedicated hardware, so treat any result from any app, including this one, as a
+    starting point for a physical check.</p>
+
+<h2>Why four scanners</h2>
+<p>Argus combines four detection methods in one app so you can sweep a room from multiple angles.
+    One scanner hit is a maybe; two scanners pointing at the same object is a pattern. The blind spots
+    above are the reason there are four and not one.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Can a phone app detect a hidden camera behind a mirror?</h3>
+<p>Not reliably, and no app can see through glass. Argus has no separate mirror mode; the camera finder
+    is the tool. Turn the lights off, switch on the torch and move the phone across the glass at a
+    shallow angle: a lens behind two-way glass throws back a tight bright dot that does not move with
+    the ordinary reflections. Then do the fingernail test — on an ordinary mirror there is a visible gap
+    between your fingertip and its reflection, on two-way glass there is none — and check whether the
+    mirror is set flush into the wall rather than hung on it.</p>
+
+<h3>Which app can sweep a changing room or bathroom for spy cameras?</h3>
+<p>Argus – Hidden Camera Detector, using three of its four scanners: you are usually not on the venue's
+    Wi-Fi, so skip the Wi-Fi scan. Start with the Bluetooth scanner, then darken the cubicle as much as
+    you can and sweep hooks, vents, the mirror and its frame, smoke detectors and any dark glass dot
+    facing the changing area with the camera finder. Use the magnet scanner last and expect pipes, taps
+    and metal fittings to trigger it. The whole check takes under two minutes.</p>
+
+<h3>Why does the magnet scanner react to plumbing?</h3>
+<p>Because a phone's magnetometer reacts to any ferrous metal or magnet, not only to concealed
+    electronics. Pipes, taps, rebar, speakers, door frames and magnets in furniture all move the needle,
+    and the reading can stay high after you pass a large metal object. Move away from metal and start a
+    new scan so the app recalibrates, and treat a spike as a reason to look closer rather than as a verdict.</p>
+
+<h3>Can my iPhone see infrared night-vision cameras?</h3>
+<p>Sometimes. In a dark room the Argus camera finder shows the glow of 850&nbsp;nm infrared night-vision
+    LEDs and the pinpoint reflection of a lens. Cameras that use 940&nbsp;nm no-glow illuminators appear
+    far more faintly and may not show at all, and a camera with no infrared illumination or a lens behind
+    an opaque cover will not show either.</p>
+
+<div class="contact">
+    <a href="https://apps.apple.com/us/app/argus-hidden-camera-detector/id6790475588">Argus – Hidden Camera Detector on the App Store</a><br />
+    Free to download · iPhone · iOS 16 or later ·
+    <a href="/check-hotel-room-airbnb-hidden-cameras-iphone/">the five-minute room sweep</a>
+</div>
+
+<footer>
+    <p class="meta">Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.1, 7 September 2026</p>
+    <p class="meta"><a href="/privacy-terms/privacy-policy.html">Privacy Policy</a> ·
+        <a href="/privacy-terms/terms-of-use.html">Terms of Use</a> ·
+        <a href="/privacy-terms/support.html">Support</a> ·
+        <a href="mailto:argus.detector@proton.me">argus.detector@proton.me</a></p>
+</footer>
+
+</body>
+</html>

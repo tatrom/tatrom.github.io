@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Bump a <lastmod> only when that page's content actually changed. A sitemap where
+  everything changed yesterday is one a search engine learns to discount.
+  The /privacy-terms/ URLs are served from the tatrom/privacy-terms repository;
+  their dates come from `git log -1 --format=%cs -- <file>` in that repo.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tatrom.github.io/</loc>
+    <lastmod>2026-09-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tatrom.github.io/check-hotel-room-airbnb-hidden-cameras-iphone/</loc>
+    <lastmod>2026-09-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tatrom.github.io/what-argus-can-and-cannot-detect/</loc>
+    <lastmod>2026-09-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tatrom.github.io/privacy/</loc>
+    <lastmod>2026-09-20</lastmod>
+  </url>
+  <url>
+    <loc>https://tatrom.github.io/privacy-terms/privacy-policy.html</loc>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
+    <loc>https://tatrom.github.io/privacy-terms/terms-of-use.html</loc>
+    <lastmod>2026-06-18</lastmod>
+  </url>
+  <url>
+    <loc>https://tatrom.github.io/privacy-terms/support.html</loc>
+    <lastmod>2026-08-09</lastmod>
+  </url>
+</urlset>

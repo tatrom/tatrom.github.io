@@ -1,0 +1,32 @@
+# https://tatrom.github.io/robots.txt
+# Every crawler is welcome. Nothing on this host should be kept out of an index.
+#
+# NOTE: this file is host-scoped. It also governs /privacy-terms/*, which is served
+# from the separate tatrom/privacy-terms repository. Never add a Disallow line here:
+# it would quietly remove the App Store privacy policy and support pages from search
+# and from ChatGPT, while those URLs keep returning 200 and nothing looks broken.
+
+User-agent: *
+Allow: /
+
+# The groups below are redundant under RFC 9309 — a crawler obeys the single most
+# specific matching group and ignores the rest. They are kept as an explicit
+# statement of intent for the crawlers this site is built for.
+
+# ChatGPT's search index. This is the bot that gates citation in ChatGPT.
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT and Custom GPT on-demand page fetches (user-initiated).
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI's model-training crawler. Does not affect ChatGPT search eligibility.
+User-agent: GPTBot
+Allow: /
+
+# Bing, which also feeds ChatGPT's web results.
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://tatrom.github.io/sitemap.xml
