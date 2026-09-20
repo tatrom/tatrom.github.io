@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Bump a <lastmod> only when that page's content actually changed. A sitemap where
+  Bump a lastmod only when that page's content actually changed. A sitemap where
   everything changed yesterday is one a search engine learns to discount.
   The /privacy-terms/ URLs are served from the tatrom/privacy-terms repository;
-  their dates come from `git log -1 --format=%cs -- <file>` in that repo.
+  their dates are the last commit date of each file in that repository.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
