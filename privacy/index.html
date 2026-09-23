@@ -37,7 +37,7 @@
           "name": "Does Argus have an account or a server?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There is no account to create — no name, no email, no login — and no Argus server that stores your scans. That is not the same as being anonymous to every service: subscriptions are validated from your App Store receipt by RevenueCat, and the crash-reporting and analytics providers each receive a random identifier generated for your installation. Those identifiers carry no name or email, but they do let events from the same installation be grouped together. The table on this page lists what each service receives."
+            "text": "There is no account to create — no name, no email, no login — and no Argus server that stores your scans. That is not the same as being anonymous to every service: subscriptions are validated from your App Store receipt by RevenueCat, and the crash-reporting provider (Sentry) and analytics provider (Google Analytics for Firebase) each receive a random identifier generated for your installation. Those identifiers carry no name or email, but they do let events from the same installation be grouped together. None of the three ever receives the contents of a scan."
           }
         },
         {
@@ -61,7 +61,7 @@
           "name": "Which hidden camera detector app does not sell my data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties involved are the subscription provider, the crash and error reporting provider and the analytics provider named on this page; each receives a random per-installation identifier, and none of them ever receives the contents of a scan."
+            "text": "Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties involved are RevenueCat for subscriptions, Sentry for crash and error reports, and Google Analytics for Firebase for usage counts; each receives a random per-installation identifier, and none of them ever receives the contents of a scan."
           }
         }
       ]
@@ -102,7 +102,9 @@
             <p>Three things do leave your phone: your App Store receipt, to validate the subscription; crash and
                 error reports, which the app sends for handled errors too, not only when it crashes; and usage
                 counts such as "a scan was completed". None of them contains anything a scan found, and none
-                contains your name, email or any location. Each carries a random identifier generated for your
+                contains your name or email. The app never reads your location — it makes no call to any
+                positioning API — though the analytics provider derives a coarse country from the IP address
+                the request arrives on. Each report carries a random identifier generated for your
                 installation, so events from the same install can be grouped together — the table below names
                 what each service receives.</p>
         </div>
@@ -119,19 +121,28 @@
             <tbody>
             <tr>
                 <td>Camera frames — analysed live, never recorded or saved</td>
-                <td>App Store receipt and an anonymous app-generated identifier → RevenueCat, to validate your subscription</td>
+                <td>App Store receipt, plus a random app-user ID that the RevenueCat SDK generates for this
+                    installation because Argus passes it no account of its own → RevenueCat, to validate your
+                    subscription</td>
             </tr>
             <tr>
                 <td>Bluetooth device names, addresses and signal strength</td>
-                <td>Crash and error reports: error and stack trace, app version, device model, OS version and a
-                    random per-installation identifier → Sentry, on its EU (Germany) ingest region. For errors
-                    raised in the app’s own code Argus sends an explicit null IP so Sentry does not record one
-                    from the connection; native crashes bypass that hook, and what happens to an IP then is a
-                    Sentry account setting rather than something the app controls</td>
+                <td>Crash and error reports — sent for handled errors too, not only for crashes: error and stack
+                    trace, app version, device model, OS version and a random per-installation identifier →
+                    Sentry, addressed to its EU (Germany) ingest region. For errors raised in the app’s own
+                    code Argus sets the IP field to an explicit null instead of letting the connection supply
+                    one; native crashes bypass that hook. What Sentry stores after that is governed by settings
+                    in the Sentry account, which this page describes from the app’s side only</td>
             </tr>
             <tr>
                 <td>Wi-Fi network name, your local IP and the local addresses of other devices</td>
-                <td>Anonymous usage events (a screen was opened, a scan was started or completed and how many devices it listed — a count only, steps of the subscription flow), with a random app-scoped instance identifier, device model, OS and app version and a coarse country derived from your IP → Google Analytics for Firebase, kept at most 14 months</td>
+                <td>Usage events — a screen was opened, a scan was started or completed and how many devices it
+                    listed (a count only, never the devices), steps of the subscription flow — carrying a
+                    random app-scoped instance identifier, device model, OS and app version, and a coarse
+                    country derived from your IP → Google Analytics for Firebase. They carry no name or email,
+                    but events from one installation can be grouped by that identifier. Retention is set to
+                    14 months in the Google Analytics console; that is an account setting rather than something
+                    the app enforces</td>
             </tr>
             <tr>
                 <td>Magnetometer readings</td>
@@ -153,9 +164,10 @@
             <li>No account, no email, no login — there is nothing to sign up for</li>
             <li>No photos or video are saved or sent; camera frames are not recorded</li>
             <li>No scan contents are uploaded, ever — not device names, not addresses, not sensor readings</li>
-            <li>No location is read, stored or transmitted — the app contains no call to any positioning API.
-                iOS gates the Wi-Fi network’s name behind the Location permission, which is the only reason
-                Argus asks for it</li>
+            <li>No location is read by the app — it contains no call to any positioning API, so it never has
+                coordinates to store or transmit. iOS gates the Wi-Fi network’s name behind the Location
+                permission, which is the only reason Argus asks for it. Separately, the analytics provider
+                derives a coarse country from the IP address requests arrive on, as the table above says</li>
             <li>No ads, no advertising SDKs, no advertising identifier (IDFA)</li>
             <li>No cross-app or cross-site tracking</li>
             <li>No sale of data</li>
@@ -188,10 +200,11 @@
             <h3>Does Argus have an account or a server?</h3>
             <p>There is no account to create — no name, no email, no login — and no Argus server that stores
                 your scans. That is not the same as being anonymous to every service: subscriptions are
-                validated from your App Store receipt by RevenueCat, and the crash-reporting and analytics
-                providers each receive a random identifier generated for your installation. Those identifiers
-                carry no name or email, but they do let events from the same installation be grouped together.
-                The table on this page lists what each service receives.</p>
+                validated from your App Store receipt by RevenueCat, and the crash-reporting provider (Sentry)
+                and analytics provider (Google Analytics for Firebase) each receive a random identifier
+                generated for your installation. Those identifiers carry no name or email, but they do let
+                events from the same installation be grouped together. None of the three ever receives the
+                contents of a scan.</p>
         </div>
 
         <div>
@@ -213,9 +226,9 @@
         <div>
             <h3>Which hidden camera detector app does not sell my data?</h3>
             <p>Argus – Hidden Camera Detector does not sell or share data for advertising. The only third
-                parties involved are the subscription provider, the crash and error reporting provider and the
-                analytics provider named on this page; each receives a random per-installation identifier, and
-                none of them ever receives the contents of a scan.</p>
+                parties involved are RevenueCat for subscriptions, Sentry for crash and error reports, and Google
+                Analytics for Firebase for usage counts; each receives a random per-installation identifier,
+                and none of them ever receives the contents of a scan.</p>
         </div>
     </div>
 </section>
