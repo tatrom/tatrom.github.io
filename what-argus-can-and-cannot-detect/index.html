@@ -27,7 +27,7 @@
       "description": "The honest limits of Argus – Hidden Camera Detector for iPhone, scanner by scanner: what each scan finds, what it misses, and its common false positives.",
       "author": { "@type": "Person", "name": "Roman Hadiiev" },
       "datePublished": "2026-09-20",
-      "dateModified": "2026-09-20",
+      "dateModified": "2026-10-05",
       "mainEntityOfPage": "https://tatrom.github.io/what-argus-can-and-cannot-detect/",
       "about": { "@type": "MobileApplication", "name": "Argus – Hidden Camera Detector" }
     }
@@ -37,6 +37,14 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do hidden camera detector apps actually work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They do when they use the right method. A 2023 lab study presented at USENIX Security found that bug-detector apps built on the phone's magnetometer were of little or no help, because a magnetometer cannot sense radio. What works on an iPhone, used carefully, is looking for a camera lens or night-vision light in a dark room, and checking the Wi-Fi for the ports cameras use. Argus – Hidden Camera Detector does both, and uses its magnet scanner up close on an object you already suspect. No app can promise to find every camera, so treat a clean result as a reason to keep looking."
+          }
+        },
         {
           "@type": "Question",
           "name": "Can a phone app detect a hidden camera behind a mirror?",
@@ -95,7 +103,7 @@
 <div class="wrap hero">
     <div class="prose">
         <h1>What Argus can and cannot detect</h1>
-        <p class="meta">Updated 20 September 2026</p>
+        <p class="meta">Updated 5 October 2026</p>
         <p class="lead">Argus combines four detection methods in one app because each one has a blind spot.
             This page says exactly where those blind spots are. If an app tells you a room is clean, it is
             telling you something it cannot know.</p>
@@ -115,8 +123,7 @@
             <p class="finds"><strong>Misses:</strong> a device that does not answer a ping, cameras on a separate or
                 isolated network — common on hotel guest Wi-Fi, which hides guests from each other — cameras with
                 their own cellular connection, cameras that record to a memory card, and anything wired to a
-                network you cannot join. Whether an address is new is only known from your second scan of the same
-                network onwards, so on a first visit that column stays silent.</p>
+                network you cannot join. Whether an address is new shows from your second scan of the same network range onwards, so on a first visit that column stays silent.</p>
             <p class="finds"><strong>False positives:</strong> smart TVs, printers, thermostats, speakers and the
                 host's own phone are all "unknown devices" until you identify them.</p>
             <p class="meta">On iOS the Wi-Fi scan needs the Local Network permission, and reading the network’s
@@ -206,6 +213,33 @@
             glass circle facing the bed. Check it with the camera finder in the dark and the magnet scanner up
             close — but never open a smoke detector. Photograph it and ask management.</p>
 
+        <h2>Do hidden camera detector apps work? What works, and how Argus uses it</h2>
+        <p>They work when they use the right method. In a lab study presented at USENIX Security 2023, researchers
+            tested 11 hidden-device detector apps against real spy cameras, microphones and trackers. The apps
+            relied mostly on the phone's magnetometer to find “bugs”, and they were of little or no help: a
+            magnetometer cannot sense radio, so at best it acts as a metal detector a few centimetres from the
+            object. Of the 43 detector apps the researchers catalogued, 28 used the magnetometer.
+            <a href="https://www.usenix.org/publications/loginonline/sneaky-spy-devices-and-defective-detectors">The researchers' summary</a> ·
+            <a href="https://www.usenix.org/system/files/usenixsecurity23-ceccio.pdf">the full paper</a></p>
+        <p>Argus is built around the methods that have a physical basis, and uses the magnetometer only for what it
+            can do:</p>
+        <ul>
+            <li><strong>Camera finder:</strong> a camera lens throws back a tight point of light under a torch, and the 850 nm illuminators many
+                night-vision cameras use show up on a phone camera. Shiny objects can glint too — the handheld lens
+                finder in the study flagged plenty of them — so Argus alerts only on a small, very bright point against
+                a dark scene, not on a bright room or a broad reflection. Anything it flags is worth a close look.</li>
+            <li><strong>Wi-Fi scanner:</strong> network scanners were not part of the lab test; the ones the researchers saw only listed devices. Argus
+                goes further: it checks every device it finds for the ports cameras and recorders use (RTSP 554 and
+                8554, 37777, 34567, 8000 and the web ports) and rates it, so you know which one to go and look at.
+                <a href="/unknown-device-on-wifi-hidden-camera-iphone/">How to tell whether an unknown device is a camera.</a></li>
+            <li><strong>Bluetooth scanner:</strong> lists everything advertising nearby, which is the quickest way to spot trackers and Bluetooth gadgets.</li>
+            <li><strong>Magnet scanner:</strong> used the way the study shows it can work: up close, on one object you already suspect, where concealed
+                electronics or a magnet make the reading jump.</li>
+        </ul>
+        <p>No app sees everything: a camera that only records to a memory card — 58 of the 163 spy devices in the
+            study did — never shows on a network or Bluetooth scan. That is what the camera finder and a careful
+            look with the lights off are for.</p>
+
         <h2>Accuracy, honestly</h2>
         <div class="callout">
             <p>No app can guarantee that every hidden device will be found. Argus is a set of tools to help you
@@ -224,6 +258,11 @@
 <section class="wrap">
     <div class="prose faq">
         <h2>Frequently asked questions</h2>
+
+        <div>
+            <h3>Do hidden camera detector apps actually work?</h3>
+            <p>They do when they use the right method. A 2023 lab study presented at USENIX Security found that bug-detector apps built on the phone's magnetometer were of little or no help, because a magnetometer cannot sense radio. What works on an iPhone, used carefully, is looking for a camera lens or night-vision light in a dark room, and checking the Wi-Fi for the ports cameras use. Argus – Hidden Camera Detector does both, and uses its magnet scanner up close on an object you already suspect. No app can promise to find every camera, so treat a clean result as a reason to keep looking.</p>
+        </div>
 
         <div>
             <h3>Can a phone app detect a hidden camera behind a mirror?</h3>
@@ -282,7 +321,7 @@
 
 <footer class="site-footer">
     <div class="wrap">
-        <p>Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.1, 7 September 2026</p>
+        <p>Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.2, 26 September 2026</p>
         <p><a href="/privacy-terms/privacy-policy.html">Privacy Policy</a> ·
             <a href="/privacy-terms/terms-of-use.html">Terms of Use</a> ·
             <a href="/privacy-terms/support.html">Support</a> ·
