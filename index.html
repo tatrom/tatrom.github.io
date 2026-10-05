@@ -30,7 +30,7 @@
       "url": "https://apps.apple.com/us/app/argus-hidden-camera-detector/id6790475588",
       "installUrl": "https://apps.apple.com/us/app/argus-hidden-camera-detector/id6790475588",
       "datePublished": "2026-08-25",
-      "softwareVersion": "1.1",
+      "softwareVersion": "1.2",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "featureList": [
         "Wi-Fi scanner",
@@ -92,7 +92,23 @@
           "name": "Is there a free iPhone app that finds hidden cameras?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The Camera Finder — the infrared and lens-reflection scanner most people mean by a hidden camera detector — is free to use in full: no scan limit, no account, no ads. The Wi-Fi and Bluetooth scanners run for free too and tell you how many devices answered and how many of them are unidentified. Naming those devices, their per-device detail and the Magnet Scanner are what Argus Pro adds, as an auto-renewable weekly or yearly subscription whose price is shown in the app before you subscribe."
+            "text": "Yes. The Camera Finder — the infrared and lens-reflection scanner most people mean by a hidden camera detector — is free to use in full: no scan limit, no account, no ads, and no free trial that turns into a charge. The Wi-Fi and Bluetooth scanners are free too, also with no scan limit: they run the whole scan and tell you how many devices answered and how many of them are unidentified. Argus Pro, an optional weekly or yearly subscription, shows which device is which and unlocks the Magnet Scanner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Argus Pro add?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The free scans tell you how many devices are around you; Pro tells you which one to look at. For each device on the Wi-Fi network, Pro shows its IP address and its name where the network provides one, which camera and DVR ports answered (RTSP 554 and 8554, 37777, 34567, 8000 and the web ports), the device's own reply where it gives one, and a camera-likelihood rating. Devices rated as possible cameras are flagged in the list, and so are devices that are new compared with your recent scans of that network. For each Bluetooth device, Pro shows its name, or its maker when that is all it advertises, and its signal strength. Pro also unlocks the Magnet Scanner. The Camera Finder stays free either way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a subscription to check a hotel room or Airbnb?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The Camera Finder — the scan that spots camera lenses and night-vision light — is free in full, with no free trial and nothing charged unless you choose Pro, and the Wi-Fi and Bluetooth scans show for free how many devices are around you and how many are unidentified. Argus Pro is for when you want to know which device is which — its camera rating, open ports and details — and it adds the Magnet Scanner. For a stay of up to a week the weekly plan is enough: you can turn off auto-renewal in Settings → your name → Subscriptions right after subscribing, and Pro stays active until the end of the week."
           }
         }
       ]
@@ -183,7 +199,10 @@
                 firmware and identifies the software far better than the port number alone.</p>
             <p class="finds"><strong>Misses:</strong> a device that does not answer a ping, cameras on a separate or
                 isolated network, cameras with their own SIM card, and cameras that only record to a memory card.
-                Whether an address is new is only known from your second scan of the same network onwards.</p>
+                Whether an address is new shows from your second scan of the same network range onwards.</p>
+            <p class="finds"><strong>Free:</strong> the scan, how many devices answered and how many are unidentified.
+                <strong>Pro:</strong> each device's IP address and name, its open ports and reply, and the camera-likelihood rating.
+                <a href="/unknown-device-on-wifi-hidden-camera-iphone/">Is an unknown device a camera?</a></p>
         </article>
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7.5 17 16.5 12 21V3l5 4.5L7 16.5"/></svg>
@@ -195,6 +214,8 @@
                 captured once per device per scan, not tracked live — to narrow down where something is, run
                 separate scans from different spots and compare. iOS hides AirTag identifiers from third-party
                 apps, so Argus cannot name an AirTag with certainty — confirm one in Apple's Find My.</p>
+            <p class="finds"><strong>Free:</strong> the scan, how many devices answered and how many are unidentified.
+                <strong>Pro:</strong> each device's name, or its maker when that is all it advertises, and its signal strength.</p>
         </article>
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-2.5h8L18 7h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
@@ -206,6 +227,7 @@
                 illuminators, which phone cameras see far more faintly than 850&nbsp;nm ones, and lenses behind
                 opaque covers. It is built for dark rooms and deliberately stays quiet in bright light, because
                 bright rooms produce constant false alarms.</p>
+            <p class="finds"><strong>Free</strong> in full, with no scan limit.</p>
         </article>
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v8a6 6 0 0 0 12 0V4h-4v8a2 2 0 0 1-4 0V4z"/><path d="M6 8h4M14 8h4"/></svg>
@@ -217,6 +239,7 @@
                 fittings move the needle too, and a reading can stay high after you pass a large metal object —
                 move away and start a new scan so it recalibrates. Treat a spike as a reason to look closer,
                 not as a verdict.</p>
+            <p class="finds"><strong>Pro:</strong> included with Argus Pro.</p>
         </article>
     </div>
 
@@ -312,11 +335,22 @@
 
         <div>
             <h3>Is there a free iPhone app that finds hidden cameras?</h3>
-            <p>Yes. The Camera Finder — the infrared and lens-reflection scanner most people mean by a hidden
-                camera detector — is free to use in full: no scan limit, no account, no ads. The Wi-Fi and
-                Bluetooth scanners run for free too and tell you how many devices answered and how many of them are unidentified. Naming those devices, their per-device detail and the Magnet Scanner are
-                what Argus Pro adds, as an auto-renewable weekly or yearly subscription whose price is shown in
-                the app before you subscribe.</p>
+            <p>Yes. The Camera Finder — the infrared and lens-reflection scanner most people mean by a hidden camera
+                detector — is free to use in full: no scan limit, no account, no ads, and no free trial that turns into
+                a charge. The Wi-Fi and Bluetooth scanners are free too, also with no scan limit: they run the whole scan and tell you how many
+                devices answered and how many of them are unidentified. Argus Pro, an optional weekly or yearly
+                subscription, shows which device is which and unlocks the Magnet Scanner.</p>
+        </div>
+
+        <div>
+            <h3>What does Argus Pro add?</h3>
+            <p>The free scans tell you how many devices are around you; Pro tells you which one to look at. For each device on the Wi-Fi network, Pro shows its IP address and its name where the network provides one, which camera and DVR ports answered (RTSP 554 and 8554, 37777, 34567, 8000 and the web ports), the device's own reply where it gives one, and a camera-likelihood rating. Devices rated as possible cameras are flagged in the list, and so are devices that are new compared with your recent scans of that network. For each Bluetooth device, Pro shows its name, or its maker when that is all it advertises, and its signal strength. Pro also unlocks the Magnet Scanner. The Camera Finder stays free either way.</p>
+        </div>
+
+        <div>
+            <h3>Do I need a subscription to check a hotel room or Airbnb?</h3>
+            <p>No. The Camera Finder — the scan that spots camera lenses and night-vision light — is free in full, with no free trial and nothing charged unless you choose Pro, and the Wi-Fi and Bluetooth scans show for free how many devices are around you and how many are unidentified. Argus Pro is for when you want to know which device is which — its camera rating, open ports and details — and it adds the Magnet Scanner. For a stay of up to a week the weekly plan is enough: you can turn off auto-renewal in Settings → your name →
+                Subscriptions right after subscribing, and Pro stays active until the end of the week.</p>
         </div>
     </div>
 </section>
@@ -337,7 +371,7 @@
 
 <footer class="site-footer">
     <div class="wrap">
-        <p>Argus – Hidden Camera Detector · first released 25 August 2026 · version 1.1, 7 September 2026 · page updated 20 September 2026</p>
+        <p>Argus – Hidden Camera Detector · first released 25 August 2026 · version 1.2, 26 September 2026 · page updated 5 October 2026</p>
         <p><a href="/privacy-terms/privacy-policy.html">Privacy Policy</a> ·
             <a href="/privacy-terms/terms-of-use.html">Terms of Use</a> ·
             <a href="/privacy-terms/support.html">Support</a> ·
