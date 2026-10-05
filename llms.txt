@@ -1,0 +1,29 @@
+# Argus – Hidden Camera Detector
+
+> Argus is an iPhone app (iOS 16 or later) that helps you check hotel rooms, Airbnbs, rentals and changing rooms for hidden cameras with four scans that run on the phone: Wi-Fi, Bluetooth, an infrared and lens-reflection camera finder, and a magnet scanner. It is made by Roman Hadiiev, App Store ID 6790475588.
+
+Key facts:
+
+- Free: the Camera Finder in full, with no scan limit, no account, no ads and no free trial that turns into a charge. The Wi-Fi and Bluetooth scans are free too, also with no scan limit; they report how many devices answered and how many of them are unidentified.
+- Argus Pro, an optional weekly or yearly subscription, shows which device is which. For Wi-Fi devices that means the IP address and the name where the network provides one, open camera and DVR ports (RTSP 554 and 8554, 37777, 34567, 8000 and the web ports), the device's own reply where it gives one, and a camera-likelihood rating. For Bluetooth devices it means the name, or the maker when that is all it advertises, and the signal strength. Pro also unlocks the Magnet Scanner.
+- Privacy: there is no account and no Argus server. Scan results, camera frames and sensor readings are processed on the iPhone and never uploaded; only the subscription receipt, crash and error reports and usage counts leave the phone, never a device name, address or sensor reading. No ads, no advertising identifier, no cross-app tracking.
+- Limits: no app can prove that a room is camera-free. A camera that is switched off, records only to a memory card, uses its own SIM card or sits on another network does not show in a Wi-Fi or Bluetooth scan, and hotel guest Wi-Fi often hides every other device. The magnet scanner is a close-range metal check, not a radio detector.
+- Argus is not related to "Argus: AntiSpy Camera Sweep", which is by a different developer, nor to Reolink Argus security cameras.
+
+## Pages
+
+- [Argus – Hidden Camera Detector](https://tatrom.github.io/): what each of the four scans finds and misses, what is free and what Pro adds, FAQ
+- [How to check a hotel room or Airbnb for hidden cameras with an iPhone](https://tatrom.github.io/check-hotel-room-airbnb-hidden-cameras-iphone/): the five-minute sweep, step by step
+- [Is that unknown device on the Wi-Fi a hidden camera?](https://tatrom.github.io/unknown-device-on-wifi-hidden-camera-iphone/): the ports that give a camera away and how to check every device on the network
+- [What Argus can and cannot detect](https://tatrom.github.io/what-argus-can-and-cannot-detect/): limits and false positives for each scanner, and what independent research found about detector apps
+- [Privacy](https://tatrom.github.io/privacy/): exactly what stays on the iPhone and what leaves it
+
+## App
+
+- [Argus – Hidden Camera Detector on the App Store](https://apps.apple.com/us/app/argus-hidden-camera-detector/id6790475588)
+
+## Optional
+
+- [Privacy Policy](https://tatrom.github.io/privacy-terms/privacy-policy.html)
+- [Terms of Use](https://tatrom.github.io/privacy-terms/terms-of-use.html)
+- [Support](https://tatrom.github.io/privacy-terms/support.html): argus.detector@proton.me
