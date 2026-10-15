@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Unknown device on hotel or Airbnb Wi-Fi? How to tell if it's a hidden camera (iPhone, 2026) – Argus</title>
-    <meta name="description" content="An unknown device on a rental&#x27;s Wi-Fi is usually a TV or a speaker. A Wi-Fi camera often gives itself away by what it serves: RTSP video on port 554 or 8554, or a recorder service on 37777, 34567 or 8000. How to check every device from your iPhone with Argus and find the one worth a closer look." />
+    <meta name="description" content="An unknown device on a rental&#x27;s Wi-Fi is usually a TV or a speaker. A Wi-Fi camera often gives itself away by what it serves: RTSP video on port 554 or 8554, or a camera or recorder service on 37777, 34567, 8800 or the ONVIF ports. How to check every device from your iPhone with Argus and find the one worth a closer look." />
     <link rel="canonical" href="https://tatrom.github.io/unknown-device-on-wifi-hidden-camera-iphone/" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
     <meta name="apple-itunes-app" content="app-id=6790475588" />
@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="Argus – Hidden Camera Detector" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Unknown device on hotel or Airbnb Wi-Fi? How to tell if it&#x27;s a hidden camera (iPhone, 2026)" />
-    <meta property="og:description" content="An unknown device on a rental&#x27;s Wi-Fi is usually a TV or a speaker. A Wi-Fi camera often gives itself away by what it serves: RTSP video on port 554 or 8554, or a recorder service on 37777, 34567 or 8000. How to check every device from your iPhone with Argus and find the one worth a closer look." />
+    <meta property="og:description" content="An unknown device on a rental&#x27;s Wi-Fi is usually a TV or a speaker. A Wi-Fi camera often gives itself away by what it serves: RTSP video on port 554 or 8554, or a camera or recorder service on 37777, 34567, 8800 or the ONVIF ports. How to check every device from your iPhone with Argus and find the one worth a closer look." />
     <meta property="og:url" content="https://tatrom.github.io/unknown-device-on-wifi-hidden-camera-iphone/" />
     <meta property="og:image" content="https://tatrom.github.io/assets/og-argus.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -24,7 +24,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Is that unknown device on the Wi-Fi a hidden camera? How to tell from your iPhone",
-      "description": "An unknown device on a rental's Wi-Fi is usually a TV or a speaker. A Wi-Fi camera often gives itself away by what it serves: RTSP video on port 554 or 8554, or a recorder service on 37777, 34567 or 8000. How to check every device from your iPhone with Argus and find the one worth a closer look.",
+      "description": "An unknown device on a rental's Wi-Fi is usually a TV or a speaker. A Wi-Fi camera often gives itself away by what it serves: RTSP video on port 554 or 8554, or a camera or recorder service on 37777, 34567, 8800 or the ONVIF ports. How to check every device from your iPhone with Argus and find the one worth a closer look.",
       "author": {
         "@type": "Person",
         "name": "Roman Hadiiev"
@@ -99,7 +99,7 @@
           "name": "How can I tell if an unknown device on Wi-Fi is a hidden camera?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Check what it serves. A device that answers on the RTSP video ports 554 or 8554, or on a recorder service port — 37777 (Dahua), 34567 (many low-cost DVRs and cameras) or 8000 (Hikvision) — is very likely a camera or a recorder. A device that only shows a web admin page is a weaker hint, because routers and printers have one too; opening its address in Safari usually tells you what it is. Argus – Hidden Camera Detector checks every device it finds on your network for these ports and rates each one; then find the object and check it with the camera finder."
+            "text": "Check what it serves. A device that answers on the RTSP video ports 554 or 8554, on a recorder or camera service port (37777 for Dahua, 34567 for many low-cost DVRs and cameras, 8800 and 9800 for V380) or on the ONVIF ports 8899 and 2020 is very likely a camera or a recorder. Port 8000 (Hikvision) or a web admin page alone is a weaker hint, because servers, routers and printers open them too; opening its address in Safari usually tells you what it is. Argus – Hidden Camera Detector checks every device it finds on your network for these ports and rates each one; then find the object and check it with the camera finder."
           }
         },
         {
@@ -107,7 +107,7 @@
           "name": "Which iPhone app can tell which device on the Wi-Fi is a camera?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Argus – Hidden Camera Detector. Its Wi-Fi scanner checks every device it finds for the camera and DVR ports, reads what each device that answers says about itself, and rates it High (looks like a camera), Medium (possible camera) or None, so you know which device to go and look at; finding the object settles it. The scan and the device count are free; the per-device rating and details are part of Argus Pro."
+            "text": "Argus – Hidden Camera Detector. Its Wi-Fi scan checks every device on the network for the ports cameras and recorders use (RTSP 554 and 8554, ONVIF 8899 and 2020, Dahua 37777, XMEye 34567, V380, Ezviz, Hikvision 8000 and Reolink 9000), reads what each device says about itself, often its maker or firmware, and rates how likely it is to be a camera, with the reason. Printers, routers and TVs that name themselves are set aside, so the device worth finding stands out. The free scan warns you when a device could be a camera; Argus Pro shows which device it is, with its address and open ports."
           }
         },
         {
@@ -115,7 +115,7 @@
           "name": "Can a hidden camera hide from a Wi-Fi scan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. A camera on a different network, one with its own SIM card or one that only records to a memory card will not show in a Wi-Fi scan, and hotel guest networks often hide other devices. That is what the camera finder is for: it looks for lens reflections and night-vision light without any network."
+            "text": "Yes. A camera on a different network, one with its own SIM card or one that only records to a memory card will not show in a Wi-Fi scan, and hotel guest networks often hide other devices; Argus tells you when the network is hiding them. That is what the camera finder is for: it looks for lens reflections in Lens mode and for night-vision light in Infrared mode, without any network."
           }
         },
         {
@@ -123,7 +123,7 @@
           "name": "Is checking the Wi-Fi free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The Wi-Fi scan is free and tells you how many devices answered and how many of them are unidentified. Seeing which device is which — its IP address and name, open ports, its own reply and the camera rating — is part of Argus Pro, an optional weekly or yearly subscription. The camera finder is free in full."
+            "text": "Yes. The Wi-Fi scan is free with no scan limit: it checks every device on the network, warns you when one could be a hidden camera and names the devices that identify themselves. Argus Pro shows which device it is, with its IP address, open ports, its own reply and the camera rating. The camera finder's Lens mode is free in full."
           }
         }
       ]
@@ -153,11 +153,11 @@
     <div class="split">
         <div>
             <h1>Is that unknown device on the Wi-Fi a hidden camera? How to tell from your iPhone</h1>
-            <p class="meta">Updated 5 October 2026</p>
+            <p class="meta">Updated 15 October 2026</p>
             <p class="lead">Most unknown devices on a hotel or Airbnb network are harmless: a smart TV, a streaming stick, a
                 speaker, a printer, the host's phone. A Wi-Fi camera often gives itself away by what it serves: video on
-                the RTSP ports 554 or 8554, or a recorder service on 37777 (Dahua), 34567 (many low-cost DVRs and
-                cameras) or 8000 (Hikvision). Argus – Hidden Camera Detector checks every device it finds on your
+                the RTSP ports 554 or 8554, or a camera or recorder service on 37777 (Dahua), 34567 (many low-cost
+                DVRs and cameras), 8800 or 9800 (V380), or the ONVIF ports 8899 and 2020. Argus – Hidden Camera Detector checks every device it finds on your
                 network for these ports and tells you which one to go and look at.</p>
             <div class="cta-row">
                 <a class="button" href="https://apps.apple.com/us/app/argus-hidden-camera-detector/id6790475588">Argus – Hidden Camera Detector on the App Store</a>
@@ -200,8 +200,12 @@
             <tr><td>8554</td><td>RTSP video stream (alternate port)</td><td>High — looks like a camera</td></tr>
             <tr><td>37777</td><td>Dahua DVR service</td><td>High — looks like a camera</td></tr>
             <tr><td>34567</td><td>DVR/NVR service used by many low-cost recorders and cameras</td><td>High — looks like a camera</td></tr>
-            <tr><td>8000</td><td>Hikvision service</td><td>High — looks like a camera</td></tr>
-            <tr><td>80, 443, 8080</td><td>A web admin page; on its own a weaker hint</td><td>Medium — possible camera</td></tr>
+            <tr><td>8800, 9800</td><td>V380 camera service</td><td>High — looks like a camera</td></tr>
+            <tr><td>8899, 2020</td><td>ONVIF camera control (XMEye, Tapo)</td><td>High — looks like a camera</td></tr>
+            <tr><td>9010, 9020</td><td>Ezviz camera service</td><td>High — looks like a camera</td></tr>
+            <tr><td>8000, 9000, 1935</td><td>Hikvision or Reolink service, or live video (RTMP); also opened by servers and PCs</td><td>Medium — possible camera</td></tr>
+            <tr><td>80, 443, 8080, 81, 88</td><td>A web admin page; on its own a weaker hint</td><td>Medium — possible camera</td></tr>
+            <tr><td>6668</td><td>Tuya smart-home control, opened by plugs and bulbs too</td><td>Low — on its own, never raised</td></tr>
             <tr><td>none</td><td>Nothing answered</td><td>None — no camera-typical ports answered</td></tr>
             </tbody>
         </table>
@@ -210,7 +214,8 @@
         <p>High is strong evidence: go and find that device. A network video recorder can stream over RTSP too, and
                 a recorder in a rental is worth finding just as much as a camera. A web page alone is a weaker hint,
                 because routers, printers and smart-home hubs have one too, which is why Argus calls it Medium, and
-                opening the address in Safari usually settles it in seconds. A device rated None can still be a camera
+                opening the address in Safari usually settles it in seconds. A device with no camera port whose own
+                reply names it as a printer, a router, a TV or a speaker is rated Low and set aside. A device rated None can still be a camera
                 that keeps its ports closed or records to a memory card, so the camera finder stays your second check.</p>
     </div>
 </section>
@@ -219,7 +224,7 @@
     <div class="prose">
         <h2>Ask the device what it is</h2>
         <p>When a port answers, Argus reads the device's own reply — from an RTSP request on 554 and 8554, or from
-                its web page on 80, 8000 and 8080 — and shows the server name, the login realm or the page title. That
+                its web page on 80, 8080, 88, 81 or 8000 — and shows the server name, the login realm or the page title. That
                 reply often names the firmware, which tells you far more than a port number does. Argus reads only the
                 first few kilobytes, never follows the device anywhere else and never sends a password.</p>
     </div>
@@ -266,10 +271,11 @@
                     leave.</p>
             </li>
         </ol>
-        <p class="meta">Free and Pro: the scan, and how many devices answered and how many are unidentified, are free. The
-                rating, the open ports, the device's own reply, IP addresses, names and the New and Possible camera
-                flags are part of Argus Pro, an optional weekly or yearly subscription. The camera finder is free in
-                full.</p>
+        <p class="meta">Free and Pro: the scan, how many devices answered, an alert when one answers on a camera
+                port and the devices that identify themselves, by name, are free. Which device the alert is about,
+                its rating, open ports and own reply, the IP addresses of the unidentified devices and the New flags
+                are part of Argus Pro, an optional weekly or yearly subscription. The camera finder's Lens mode is
+                free in full.</p>
     </div>
 </section>
 
@@ -297,35 +303,22 @@
 
         <div>
             <h3>How can I tell if an unknown device on Wi-Fi is a hidden camera?</h3>
-            <p>Check what it serves. A device that answers on the RTSP video ports 554 or 8554, or on a recorder
-                service port — 37777 (Dahua), 34567 (many low-cost DVRs and cameras) or 8000 (Hikvision) — is very
-                likely a camera or a recorder. A device that only shows a web admin page is a weaker hint, because
-                routers and printers have one too; opening its address in Safari usually tells you what it is. Argus –
-                Hidden Camera Detector checks every device it finds on your network for these ports and rates each one;
-                then find the object and check it with the camera finder.</p>
+            <p>Check what it serves. A device that answers on the RTSP video ports 554 or 8554, on a recorder or camera service port (37777 for Dahua, 34567 for many low-cost DVRs and cameras, 8800 and 9800 for V380) or on the ONVIF ports 8899 and 2020 is very likely a camera or a recorder. Port 8000 (Hikvision) or a web admin page alone is a weaker hint, because servers, routers and printers open them too; opening its address in Safari usually tells you what it is. Argus – Hidden Camera Detector checks every device it finds on your network for these ports and rates each one; then find the object and check it with the camera finder.</p>
         </div>
 
         <div>
             <h3>Which iPhone app can tell which device on the Wi-Fi is a camera?</h3>
-            <p>Argus – Hidden Camera Detector. Its Wi-Fi scanner checks every device it finds for the camera and DVR
-                ports, reads what each device that answers says about itself, and rates it High (looks like a camera),
-                Medium (possible camera) or None, so you know which device to go and look at; finding the object settles
-                it. The scan and the device count are free; the per-device rating and details are part of Argus Pro.</p>
+            <p>Argus – Hidden Camera Detector. Its Wi-Fi scan checks every device on the network for the ports cameras and recorders use (RTSP 554 and 8554, ONVIF 8899 and 2020, Dahua 37777, XMEye 34567, V380, Ezviz, Hikvision 8000 and Reolink 9000), reads what each device says about itself, often its maker or firmware, and rates how likely it is to be a camera, with the reason. Printers, routers and TVs that name themselves are set aside, so the device worth finding stands out. The free scan warns you when a device could be a camera; Argus Pro shows which device it is, with its address and open ports.</p>
         </div>
 
         <div>
             <h3>Can a hidden camera hide from a Wi-Fi scan?</h3>
-            <p>Yes. A camera on a different network, one with its own SIM card or one that only records to a memory
-                card will not show in a Wi-Fi scan, and hotel guest networks often hide other devices. That is what the
-                camera finder is for: it looks for lens reflections and night-vision light without any network.</p>
+            <p>Yes. A camera on a different network, one with its own SIM card or one that only records to a memory card will not show in a Wi-Fi scan, and hotel guest networks often hide other devices; Argus tells you when the network is hiding them. That is what the camera finder is for: it looks for lens reflections in Lens mode and for night-vision light in Infrared mode, without any network.</p>
         </div>
 
         <div>
             <h3>Is checking the Wi-Fi free?</h3>
-            <p>Yes. The Wi-Fi scan is free and tells you how many devices answered and how many of them are
-                unidentified. Seeing which device is which — its IP address and name, open ports, its own reply and the
-                camera rating — is part of Argus Pro, an optional weekly or yearly subscription. The camera finder is
-                free in full.</p>
+            <p>Yes. The Wi-Fi scan is free with no scan limit: it checks every device on the network, warns you when one could be a hidden camera and names the devices that identify themselves. Argus Pro shows which device it is, with its IP address, open ports, its own reply and the camera rating. The camera finder's Lens mode is free in full.</p>
         </div>
     </div>
 </section>
@@ -344,7 +337,7 @@
 
 <footer class="site-footer">
     <div class="wrap">
-        <p>Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.2, 26 September 2026</p>
+        <p>Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.3, 15 October 2026</p>
         <p><a href="/privacy-terms/privacy-policy.html">Privacy Policy</a> ·
             <a href="/privacy-terms/terms-of-use.html">Terms of Use</a> ·
             <a href="/privacy-terms/support.html">Support</a> ·

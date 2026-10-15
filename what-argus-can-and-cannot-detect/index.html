@@ -74,7 +74,7 @@
           "name": "Can my iPhone see infrared night-vision cameras?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Partly. The Argus camera finder flags bright points in a dark room, and the 850 nm illuminators many night-vision cameras use can register as one. It cannot tell infrared from an ordinary reflection, so treat a hit as a place to look. Cameras that use 940 nm no-glow illuminators appear far more faintly and may not show at all, and a camera with no infrared illumination or a lens behind an opaque cover will not show either."
+            "text": "Often, yes. The Argus camera finder has an Infrared mode (Argus Pro) for exactly this: the 850 nm illuminators many night-vision cameras use are invisible to your eyes but often show on an iPhone camera as a small bright dot, and Argus beeps when it spots one. Some iPhone cameras see infrared better than others, so try the front camera too. Cameras with 940 nm no-glow illuminators appear far more faintly and may not show at all, and a camera with no infrared illumination or a lens behind an opaque cover will not show either. A light you can also see with your own eyes is an ordinary light."
           }
         }
       ]
@@ -103,7 +103,7 @@
 <div class="wrap hero">
     <div class="prose">
         <h1>What Argus can and cannot detect</h1>
-        <p class="meta">Updated 5 October 2026</p>
+        <p class="meta">Updated 15 October 2026</p>
         <p class="lead">Argus combines four detection methods in one app because each one has a blind spot.
             This page says exactly where those blind spots are. If an app tells you a room is clean, it is
             telling you something it cannot know.</p>
@@ -137,28 +137,31 @@
             <h2>Bluetooth scanner</h2>
             <p class="finds"><strong>Finds:</strong> Bluetooth Low Energy devices advertising nearby during a
                 ten-second scan, with name, address and the signal strength recorded when each was first seen.
-                Anything fainter than −90 dBm is left out as next-room noise.</p>
+                Anything fainter than −90 dBm is left out as next-room noise. It recognises item trackers (Tile,
+                Samsung SmartTag, Chipolo, Pebblebee, Google Find My Device tags), and Find it follows one
+                device's live signal to show how close it is.</p>
             <p class="finds"><strong>Misses:</strong> anything not advertising over Bluetooth, and most Wi-Fi-only
-                cameras. Signal strength is captured once per device per scan, not tracked live — to narrow down
-                where something is, run separate scans from different spots and compare. iOS hides AirTag
-                identifiers from third-party apps, so Argus cannot name an AirTag with certainty — use Apple's
-                Find My to confirm one.</p>
+                cameras. Find it's signal is approximate: walls, furniture and your own body weaken it. iOS may hide
+                Apple's own Find My tags from apps, so confirm an AirTag in Apple's Find My; your iPhone also warns
+                you about an unknown AirTag travelling with you.</p>
             <p class="finds"><strong>False positives:</strong> headphones, TVs, fitness trackers and a neighbour's
                 devices through the wall.</p>
         </article>
 
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3l2-2.5h8L18 7h3v12H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
-            <h2>Camera finder — infrared and lens reflection</h2>
-            <p class="finds"><strong>Finds:</strong> in a dark room, bright pinpoint reflections and glints as you sweep
-                with the torch. It weighs how many pixels are very bright against how bright the scene is overall,
-                so a lens glint reads differently from a sunlit window. A glint is a place to look, not a camera.</p>
-            <p class="finds"><strong>Misses:</strong> cameras with no infrared illumination, 940&nbsp;nm "no-glow"
-                illuminators, which phone cameras see far more faintly than 850&nbsp;nm ones, lenses behind opaque
-                covers, and anything in a brightly lit room, where the detector deliberately stays quiet to avoid
-                constant false alarms.</p>
-            <p class="finds"><strong>How to use it well:</strong> lights off, torch on, 10 to 30 centimetres from
-                the surface, moving slowly.</p>
+            <h2>Camera finder — Lens and Infrared modes</h2>
+            <p class="finds"><strong>Finds:</strong> in Lens mode, the tight bright glint a lens throws back under the
+                torch; it weighs how many pixels are very bright against how bright the scene is overall, so a lens
+                glint reads differently from a sunlit window. In Infrared mode (Argus Pro), the light of night-vision
+                cameras, which an iPhone camera often shows as a small bright dot your eyes cannot see. A flag is a
+                place to look, not a camera.</p>
+            <p class="finds"><strong>Misses:</strong> 940&nbsp;nm "no-glow" illuminators, which phone cameras see far
+                more faintly than 850&nbsp;nm ones, cameras with no infrared illumination, lenses behind opaque
+                covers, and anything in a brightly lit room, where both modes deliberately stay quiet. A light you can
+                see with your own eyes can trigger Infrared mode; that is an ordinary light.</p>
+            <p class="finds"><strong>How to use it well:</strong> lights off. Lens mode: torch on, up close, moving
+                slowly. Infrared mode: sweep the room slowly, and try the front camera too.</p>
         </article>
 
         <article class="card">
@@ -224,15 +227,15 @@
         <p>Argus is built around the methods that have a physical basis, and uses the magnetometer only for what it
             can do:</p>
         <ul>
-            <li><strong>Camera finder:</strong> a camera lens throws back a tight point of light under a torch, and the 850 nm illuminators many
-                night-vision cameras use show up on a phone camera. Shiny objects can glint too — the handheld lens
+            <li><strong>Camera finder:</strong> a camera lens throws back a tight point of light under a torch (Lens mode), and the 850 nm illuminators many
+                night-vision cameras use show up on a phone camera (Infrared mode). Shiny objects can glint too — the handheld lens
                 finder in the study flagged plenty of them — so Argus alerts only on a small, very bright point against
                 a dark scene, not on a bright room or a broad reflection. Anything it flags is worth a close look.</li>
             <li><strong>Wi-Fi scanner:</strong> network scanners were not part of the lab test; the ones the researchers saw only listed devices. Argus
                 goes further: it checks every device it finds for the ports cameras and recorders use (RTSP 554 and
-                8554, 37777, 34567, 8000 and the web ports) and rates it, so you know which one to go and look at.
+                8554, ONVIF, Hikvision 8000, Dahua 37777, XMEye 34567 and the web ports) and rates it, so you know which one to go and look at.
                 <a href="/unknown-device-on-wifi-hidden-camera-iphone/">How to tell whether an unknown device is a camera.</a></li>
-            <li><strong>Bluetooth scanner:</strong> lists everything advertising nearby, which is the quickest way to spot trackers and Bluetooth gadgets.</li>
+            <li><strong>Bluetooth scanner:</strong> lists everything advertising nearby and recognises item trackers such as Tile and SmartTag, and Find it walks you to one by its live signal.</li>
             <li><strong>Magnet scanner:</strong> used the way the study shows it can work: up close, on one object you already suspect, where concealed
                 electronics or a magnet make the reading jump.</li>
         </ul>
@@ -297,11 +300,7 @@
 
         <div>
             <h3>Can my iPhone see infrared night-vision cameras?</h3>
-            <p>Partly. The Argus camera finder flags bright points in a dark room, and the 850&nbsp;nm illuminators
-                many night-vision cameras use can register as one. It cannot tell infrared from an ordinary
-                reflection, so treat a hit as a place to look. Cameras that use 940&nbsp;nm no-glow illuminators
-                appear far more faintly and may not show at all, and a camera with no infrared illumination or a
-                lens behind an opaque cover will not show either.</p>
+            <p>Often, yes. The Argus camera finder has an Infrared mode (Argus Pro) for exactly this: the 850&nbsp;nm illuminators many night-vision cameras use are invisible to your eyes but often show on an iPhone camera as a small bright dot, and Argus beeps when it spots one. Some iPhone cameras see infrared better than others, so try the front camera too. Cameras with 940&nbsp;nm no-glow illuminators appear far more faintly and may not show at all, and a camera with no infrared illumination or a lens behind an opaque cover will not show either. A light you can also see with your own eyes is an ordinary light.</p>
         </div>
     </div>
 </section>
@@ -321,7 +320,7 @@
 
 <footer class="site-footer">
     <div class="wrap">
-        <p>Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.2, 26 September 2026</p>
+        <p>Argus – Hidden Camera Detector · made by Roman Hadiiev · App Store ID 6790475588 · first released 25 August 2026 · version 1.3, 15 October 2026</p>
         <p><a href="/privacy-terms/privacy-policy.html">Privacy Policy</a> ·
             <a href="/privacy-terms/terms-of-use.html">Terms of Use</a> ·
             <a href="/privacy-terms/support.html">Support</a> ·
