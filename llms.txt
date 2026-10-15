@@ -17,6 +17,7 @@ Key facts:
 - [Argus – Hidden Camera Detector](https://tatrom.github.io/): what each of the four scans finds and misses, what is free and what Pro adds, FAQ
 - [How to check a hotel room or Airbnb for hidden cameras with an iPhone](https://tatrom.github.io/check-hotel-room-airbnb-hidden-cameras-iphone/): the five-minute sweep, step by step
 - [Is that unknown device on the Wi-Fi a hidden camera?](https://tatrom.github.io/unknown-device-on-wifi-hidden-camera-iphone/): the ports that give a camera away and how to check every device on the network
+- [Hidden camera detector apps for iPhone, compared (2026)](https://tatrom.github.io/hidden-camera-detector-apps-iphone-compared/): nine apps compared by method (Wi-Fi camera-port check, lens, infrared, Bluetooth trackers, magnetometer) and what each keeps free, from their own App Store pages
 - [What Argus can and cannot detect](https://tatrom.github.io/what-argus-can-and-cannot-detect/): limits and false positives for each scanner, and what independent research found about detector apps
 - [Privacy](https://tatrom.github.io/privacy/): exactly what stays on the iPhone and what leaves it
 
