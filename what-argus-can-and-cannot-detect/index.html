@@ -116,17 +116,20 @@
         <article class="card">
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/><path d="M1.5 9a15 15 0 0 1 21 0"/></svg>
             <h2>Wi-Fi scanner</h2>
-            <p class="finds"><strong>Finds:</strong> devices on the network you joined that answer a scan, how
-                fast each answered, and which of the known camera and DVR ports are open. An open port commonly
+            <p class="finds"><strong>Finds:</strong> devices on the network you joined that answer a scan or
+                announce themselves, the names, models and kinds they announce and, on iOS 27, a device's maker
+                from its hardware address, how fast each answered, and which of the known camera and DVR ports are
+                open. An open port commonly
                 used by RTSP can indicate a streaming service; it does not confirm that the device is a camera.
                 When a port answers, Argus asks it what it is and shows the reply, which often names the
                 firmware and identifies the software far better than the port number alone.</p>
-            <p class="finds"><strong>Misses:</strong> a device that does not answer a ping, cameras on a separate or
+            <p class="finds"><strong>Misses:</strong> a device that neither answers a ping nor announces itself, cameras on a separate or
                 isolated network — common on hotel guest Wi-Fi, which hides guests from each other — cameras with
                 their own cellular connection, cameras that record to a memory card, and anything wired to a
                 network you cannot join. Whether an address is new shows from your second scan of the same network range onwards, so on a first visit that column stays silent.</p>
             <p class="finds"><strong>False positives:</strong> smart TVs, printers, thermostats, speakers and the
-                host's own phone are all "unknown devices" until you identify them.</p>
+                host's own phone are all "unknown devices" until they announce a name or you identify them. A maker
+                is only a hint: a smart plug from a camera maker can be flagged as a possible camera too.</p>
             <p class="meta">On iOS the Wi-Fi scan needs the Local Network permission, and reading the network’s
                 name additionally needs Location with Precise Location enabled — that is an iOS rule, and the
                 name is all it is used for. Bluetooth scanning on iOS does not involve Location. Argus never
@@ -137,16 +140,17 @@
             <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7.5 17 16.5 12 21V3l5 4.5L7 16.5"/></svg>
             <h2>Bluetooth scanner</h2>
             <p class="finds"><strong>Finds:</strong> Bluetooth Low Energy devices advertising nearby during a
-                ten-second scan, with name, address and the signal strength recorded when each was first seen.
-                Anything fainter than −90 dBm is left out as next-room noise. It recognises item trackers (Tile,
-                Samsung SmartTag, Chipolo, Pebblebee, Google Find My Device tags), and Find it follows one
-                device's live signal to show how close it is.</p>
+                ten-second scan, with name, address and signal strength, the median of every advert heard.
+                Anything fainter than −90 dBm is left out as next-room noise. Possible item trackers (Tile,
+                Samsung SmartTag, Chipolo, Pebblebee, Google Find Hub tags) come first, then the devices close to
+                you, and the rest are grouped by kind; Find it follows one device's live signal to show how close
+                it is.</p>
             <p class="finds"><strong>Misses:</strong> anything not advertising over Bluetooth, and most Wi-Fi-only
                 cameras. Find it's signal is approximate: walls, furniture and your own body weaken it. iOS may hide
                 Apple's own Find My tags from apps, so confirm an AirTag in Apple's Find My; your iPhone also warns
                 you about an unknown AirTag travelling with you.</p>
-            <p class="finds"><strong>False positives:</strong> headphones, TVs, fitness trackers and a neighbour's
-                devices through the wall.</p>
+            <p class="finds"><strong>False positives:</strong> headphones, TVs, fitness trackers, your own watch
+                and earbuds among the devices close to you, and a neighbour's devices through the wall.</p>
         </article>
 
         <article class="card">
@@ -233,10 +237,11 @@
                 finder in the study flagged plenty of them — so Argus alerts only on a small, very bright point against
                 a dark scene, not on a bright room or a broad reflection. Anything it flags is worth a close look.</li>
             <li><strong>Wi-Fi scanner:</strong> network scanners were not part of the lab test; the ones the researchers saw only listed devices. Argus
-                goes further: it checks every device it finds for the ports cameras and recorders use (RTSP 554 and
+                goes further: it names devices from what they announce and, on iOS 27, their maker, checks every
+                device it finds for the ports cameras and recorders use (RTSP 554 and
                 8554, ONVIF, Hikvision 8000, Dahua 37777, XMEye 34567 and the web ports) and rates it, so you know which one to go and look at.
                 <a href="/unknown-device-on-wifi-hidden-camera-iphone/">How to tell whether an unknown device is a camera.</a></li>
-            <li><strong>Bluetooth scanner:</strong> lists everything advertising nearby and recognises item trackers such as Tile and SmartTag, and Find it walks you to one by its live signal.</li>
+            <li><strong>Bluetooth scanner:</strong> hears everything advertising nearby, puts possible item trackers such as Tile and SmartTag first, then the devices close to you, and Find it walks you to one by its live signal.</li>
             <li><strong>Magnet scanner:</strong> used the way the study shows it can work: up close, on one object you already suspect, where concealed
                 electronics or a magnet make the reading jump.</li>
         </ul>

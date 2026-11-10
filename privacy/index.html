@@ -53,7 +53,7 @@
           "name": "Does Argus show ads or sell my data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No ads, no advertising SDKs, no advertising identifier (IDFA), no cross-app tracking, and no sale of data. Argus declares no data used to track you on its App Store privacy label."
+            "text": "No ads, no advertising SDKs, no advertising identifier (IDFA), no cross-app tracking, and no sale of data. The only ad-related information is Apple's note of whether you installed Argus from one of its own Apple Search Ads ads. Argus declares no data used to track you on its App Store privacy label."
           }
         },
         {
@@ -61,7 +61,7 @@
           "name": "Which hidden camera detector app does not sell my data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties involved are RevenueCat for subscriptions, Sentry for crash and error reports, and Google Analytics for Firebase for usage counts; each receives a random per-installation identifier, and none of them receives a device name, an address or a sensor reading from a scan."
+            "text": "Argus – Hidden Camera Detector does not sell or share data for advertising. The only third parties involved are RevenueCat for subscriptions and for measuring Argus's own Apple Search Ads ads, Sentry for crash and error reports, and Google Analytics for Firebase for usage counts; each receives a random per-installation identifier, and none of them receives a device name, an address or a sensor reading from a scan."
           }
         }
       ]
@@ -100,7 +100,8 @@
                 arrive and are never recorded or saved, and only Wi-Fi and Bluetooth scans are written to the
                 app’s local storage, where you can delete any entry or clear the history. Argus shows no ads,
                 does not use the advertising identifier (IDFA) and does not track you across apps or websites.</p>
-            <p>Three things do leave your phone: your App Store receipt, to validate the subscription; crash and
+            <p>Three things do leave your phone: your App Store receipt, to validate the subscription, with
+                Apple's note of whether you installed Argus from one of its Apple Search Ads ads; crash and
                 error reports, which the app sends for handled errors too, not only when it crashes; and usage
                 counts such as "a scan was completed". None of them contains a device name, an address or a sensor reading — analytics receives at most the number of devices a scan listed — and none contains your name or email. The app never reads your location — it makes no call to any
                 positioning API — though the analytics provider derives a coarse country from the IP address
@@ -123,10 +124,14 @@
                 <td>Camera frames — analysed live, never recorded or saved</td>
                 <td>App Store receipt, plus a random app-user ID that the RevenueCat SDK generates for this
                     installation because Argus passes it no account of its own → RevenueCat, to validate your
-                    subscription</td>
+                    subscription. If you installed Argus by tapping one of its Apple Search Ads ads, Apple's
+                    AdServices framework also tells RevenueCat which campaign, ad group and keyword led to the
+                    install; it carries no advertising identifier and is not used for tracking</td>
             </tr>
             <tr>
-                <td>Bluetooth device names, addresses and signal strength</td>
+                <td>Bluetooth device names, addresses and signal strength, and the name, maker and model a nearby
+                    device that sends no name offers when Argus connects to it for a moment to read them
+                    (read-only)</td>
                 <td>Crash and error reports — sent for handled errors too, not only for crashes: error and stack
                     trace, app version, device model, OS version and a random per-installation identifier →
                     Sentry, addressed to its EU (Germany) ingest region. For errors raised in the app’s own
@@ -135,7 +140,9 @@
                     in the Sentry account, which this page describes from the app’s side only</td>
             </tr>
             <tr>
-                <td>Wi-Fi network name, your local IP and the local addresses of other devices</td>
+                <td>Wi-Fi network name, your local IP, the local addresses of other devices, the names, models and
+                    services they announce on the network (Bonjour), and their hardware (MAC) addresses and the
+                    makers those name</td>
                 <td>Usage events — a screen was opened, a scan was started or completed and how many devices it
                     listed (a count only, never the devices), which kinds of places you pick in the onboarding
                     question (such as hotels or offices), steps of the subscription flow — carrying a
@@ -179,7 +186,8 @@
             Store receipt used to validate your subscription — and <strong>Location</strong>,
             <strong>Identifiers</strong>, <strong>Usage Data</strong> and <strong>Diagnostics</strong> as not
             linked to you: the coarse country derived from your IP by analytics, the random per-installation
-            identifiers, the usage counts and the crash and error reports described above. Argus declares
+            identifiers, the usage counts, Apple's note of an install from an Argus ad (Advertising Data, under
+            Usage Data) and the crash and error reports described above. Argus declares
             <strong>no data used to track you</strong>. Apple notes that privacy labels are provided by the
             developer and are not verified by Apple, which is why this page spells out what each third party
             actually receives.</p>
@@ -217,13 +225,15 @@
         <div>
             <h3>Does Argus show ads or sell my data?</h3>
             <p>No ads, no advertising SDKs, no advertising identifier (IDFA), no cross-app tracking, and no sale of
-                data. Argus declares no data used to track you on its App Store privacy label.</p>
+                data. The only ad-related information is Apple's note of whether you installed Argus from one of its
+                own Apple Search Ads ads. Argus declares no data used to track you on its App Store privacy label.</p>
         </div>
 
         <div>
             <h3>Which hidden camera detector app does not sell my data?</h3>
             <p>Argus – Hidden Camera Detector does not sell or share data for advertising. The only third
-                parties involved are RevenueCat for subscriptions, Sentry for crash and error reports, and Google
+                parties involved are RevenueCat for subscriptions and for measuring Argus's own Apple Search Ads
+                ads, Sentry for crash and error reports, and Google
                 Analytics for Firebase for usage counts; each receives a random per-installation identifier,
                 and none of them receives a device name, an address or a sensor reading from a scan.</p>
         </div>

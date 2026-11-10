@@ -69,7 +69,7 @@
         {
           "@type": "HowToStep",
           "name": "Set aside what you can explain",
-          "text": "Argus labels the router and your own iPhone. Match the rest against what you can see in the room. Devices the network cannot name, and any device that looks like a camera even when it has a name, are grouped as unidentified."
+          "text": "Argus labels the router and your own iPhone, names devices that announce themselves on the network, such as an AirPlay TV, a Chromecast or a printer, and, on iOS 27, shows a device's maker. Match them against what you can see in the room. Devices with no name of their own, and any device that looks like a camera even when it has a name, are grouped as unidentified."
         },
         {
           "@type": "HowToStep",
@@ -107,7 +107,7 @@
           "name": "Which iPhone app can tell which device on the Wi-Fi is a camera?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Argus – Hidden Camera Detector. Its Wi-Fi scan checks every device on the network for the ports cameras and recorders use (RTSP 554 and 8554, ONVIF 8899 and 2020, Dahua 37777, XMEye 34567, V380, Ezviz, Hikvision 8000 and Reolink 9000), reads what each device says about itself, often its maker or firmware, and rates how likely it is to be a camera, with the reason. Printers, routers and TVs that name themselves are set aside, so the device worth finding stands out. The free scan warns you when a device could be a camera; Argus Pro shows which device it is, with its address and open ports."
+            "text": "Argus – Hidden Camera Detector. Like a network scanner, it names devices on the Wi-Fi from the names and models they announce there, such as an AirPlay TV, a Chromecast or a printer, and, on iOS 27, names a device's maker from its hardware address. Then it checks every device for the ports cameras and recorders use (RTSP 554 and 8554, ONVIF 8899 and 2020, Dahua 37777, XMEye 34567, V380, Ezviz, Hikvision 8000 and Reolink 9000), reads what each device says about itself, often its firmware, and rates how likely it is to be a camera, with the reason. A device from a camera maker such as Hikvision, Dahua, Ezviz, Wyze or Ring is flagged even when no camera port answers, while printers, routers and TVs that name themselves are set aside, so the device worth finding stands out. The free scan warns you when a device could be a camera; Argus Pro shows which device it is, with its name, model and maker, IP address and open ports."
           }
         },
         {
@@ -123,7 +123,7 @@
           "name": "Is checking the Wi-Fi free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The Wi-Fi scan is free with no scan limit: it checks every device on the network, warns you when one could be a hidden camera and names the devices that identify themselves. Argus Pro shows which device it is, with its IP address, open ports, its own reply and the camera rating. The camera finder's Lens mode is free in full."
+            "text": "Yes. The Wi-Fi scan is free with no scan limit: it checks every device on the network, shows on a map how many share the Wi-Fi with you and how many are new since your recent scans, and warns you when one could be a hidden camera. Argus Pro shows which device it is, with its name, model and maker, its IP address, open ports, its own reply and the camera rating. The camera finder's Lens mode is free in full."
           }
         }
       ]
@@ -216,7 +216,9 @@
                 a recorder in a rental is worth finding just as much as a camera. A web page alone is a weaker hint,
                 because routers, printers and smart-home hubs have one too, which is why Argus calls it Medium, and
                 opening the address in Safari usually settles it in seconds. A device with no camera port whose own
-                reply names it as a printer, a router, a TV or a speaker is rated Low and set aside. A device rated None can still be a camera
+                reply or announcement names it as a printer, a router, a TV or a speaker, or whose maker builds no
+                cameras, is rated Low and set aside, while a camera maker's device is rated Medium even when no port
+                answers. A device rated None can still be a camera
                 that keeps its ports closed or records to a memory card, so the camera finder stays your second check.</p>
     </div>
 </section>
@@ -228,6 +230,16 @@
                 its web page on 80, 8080, 88, 81 or 8000 — and shows the server name, the login realm or the page title. That
                 reply often names the firmware, which tells you far more than a port number does. Argus reads only the
                 first few kilobytes, never follows the device anywhere else and never sends a password.</p>
+        <p>Many devices also announce themselves on the network, the way an AirPlay TV, a Chromecast, a printer or a
+                HomeKit accessory does. Argus listens for those announcements and takes a name, a model and the kind of
+                device from them; a device that announces itself as a HomeKit camera or doorbell, or as an RTSP video
+                service, is rated High whatever its ports say. On iOS 27 Argus also reads each device's hardware (MAC)
+                address and names its maker from the IEEE registry. A maker is a hint, never a verdict, since a chip
+                maker's name turns up in cameras and plugs alike, so only two kinds count. A camera maker such as
+                Hikvision, Dahua, Ezviz, Wyze, Ring or Reolink makes a device Medium even when no camera port answers,
+                because cloud cameras open none. Routers and gateways from makers that build no cameras are set aside,
+                and so is a device that announces a non-camera kind, such as a TV or a printer, unless a camera port
+                answers.</p>
     </div>
 </section>
 
@@ -248,9 +260,10 @@
             </li>
             <li>
                 <h3>Step 3 — Set aside what you can explain</h3>
-                <p>Argus labels the router and your own iPhone. Match the rest against what you can see in the room.
-                    Devices the network cannot name, and any device that looks like a camera even when it has a name, are
-                    grouped as unidentified.</p>
+                <p>Argus labels the router and your own iPhone, names devices that announce themselves on the network,
+                    such as an AirPlay TV, a Chromecast or a printer, and, on iOS 27, shows a device's maker. Match
+                    them against what you can see in the room. Devices with no name of their own, and any device that
+                    looks like a camera even when it has a name, are grouped as unidentified.</p>
             </li>
             <li>
                 <h3>Step 4 — Read each unidentified device</h3>
@@ -272,11 +285,11 @@
                     leave.</p>
             </li>
         </ol>
-        <p class="meta">Free and Pro: the scan, how many devices answered, an alert when one answers on a camera
-                port and the devices that identify themselves, by name, are free. Which device the alert is about,
-                its rating, open ports and own reply, the IP addresses of the unidentified devices and the New flags
-                are part of Argus Pro, an optional weekly or yearly subscription. The camera finder's Lens mode is
-                free in full.</p>
+        <p class="meta">Free and Pro: the free scan has no limit and shows your iPhone and the router, how many
+                other devices share the Wi-Fi, drawn as a map around the router, how many are new since your recent
+                scans of that network, and an alert when one could be a camera. Which device each one is — its name,
+                model and maker, IP address, rating, open ports and own reply — and which ones are new are part of
+                Argus Pro, an optional weekly or yearly subscription. The camera finder's Lens mode is free in full.</p>
     </div>
 </section>
 
@@ -309,7 +322,7 @@
 
         <div>
             <h3>Which iPhone app can tell which device on the Wi-Fi is a camera?</h3>
-            <p>Argus – Hidden Camera Detector. Its Wi-Fi scan checks every device on the network for the ports cameras and recorders use (RTSP 554 and 8554, ONVIF 8899 and 2020, Dahua 37777, XMEye 34567, V380, Ezviz, Hikvision 8000 and Reolink 9000), reads what each device says about itself, often its maker or firmware, and rates how likely it is to be a camera, with the reason. Printers, routers and TVs that name themselves are set aside, so the device worth finding stands out. The free scan warns you when a device could be a camera; Argus Pro shows which device it is, with its address and open ports.</p>
+            <p>Argus – Hidden Camera Detector. Like a network scanner, it names devices on the Wi-Fi from the names and models they announce there, such as an AirPlay TV, a Chromecast or a printer, and, on iOS 27, names a device's maker from its hardware address. Then it checks every device for the ports cameras and recorders use (RTSP 554 and 8554, ONVIF 8899 and 2020, Dahua 37777, XMEye 34567, V380, Ezviz, Hikvision 8000 and Reolink 9000), reads what each device says about itself, often its firmware, and rates how likely it is to be a camera, with the reason. A device from a camera maker such as Hikvision, Dahua, Ezviz, Wyze or Ring is flagged even when no camera port answers, while printers, routers and TVs that name themselves are set aside, so the device worth finding stands out. The free scan warns you when a device could be a camera; Argus Pro shows which device it is, with its name, model and maker, IP address and open ports.</p>
         </div>
 
         <div>
@@ -319,7 +332,7 @@
 
         <div>
             <h3>Is checking the Wi-Fi free?</h3>
-            <p>Yes. The Wi-Fi scan is free with no scan limit: it checks every device on the network, warns you when one could be a hidden camera and names the devices that identify themselves. Argus Pro shows which device it is, with its IP address, open ports, its own reply and the camera rating. The camera finder's Lens mode is free in full.</p>
+            <p>Yes. The Wi-Fi scan is free with no scan limit: it checks every device on the network, shows on a map how many share the Wi-Fi with you and how many are new since your recent scans, and warns you when one could be a hidden camera. Argus Pro shows which device it is, with its name, model and maker, its IP address, open ports, its own reply and the camera rating. The camera finder's Lens mode is free in full.</p>
         </div>
     </div>
 </section>
